@@ -9,6 +9,11 @@
     "lint": "next lint",
     "format": "prettier --ignore-path .gitignore \"**/*.+(ts|js|tsx)\" --write"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "prettier --ignore-path .gitignore \"**/*.+(ts|js|tsx)\" --write && git add ."
+    }
+  },
   "dependencies": {
     "@emotion/cache": "latest",
     "@emotion/react": "latest",
@@ -26,6 +31,7 @@
     "eslint": "latest",
     "eslint-config-next": "latest",
     "eslint-config-prettier": "^8.5.0",
+    "husky": "4",
     "prettier": "2.6.2",
     "typescript": "latest"
   }
