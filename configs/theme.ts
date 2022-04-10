@@ -2,9 +2,11 @@ import { createTheme } from "@mui/material/styles";
 
 // Create a theme instance.
 const theme = createTheme({
+  // Include font in MUI components.
   typography: {
     fontFamily: ["Montserrat Alternates", "sans-serif"].join(","),
   },
+  // Override the default palette and add custom colors.
   palette: {
     primary: {
       main: "#81ADC8",
@@ -12,7 +14,7 @@ const theme = createTheme({
     },
     black: {
       main: "#000000",
-      // contrastText: "#fff",
+      contrastText: "#fff",
     },
     vermillion: {
       main: "#CD4631",
@@ -35,6 +37,7 @@ const theme = createTheme({
 
 // define custom colors: https://mui.com/material-ui/customization/palette/
 declare module "@mui/material/styles" {
+  // define custom color types
   interface Palette {
     black: Palette["primary"];
     davysGrey: Palette["primary"];
@@ -43,6 +46,7 @@ declare module "@mui/material/styles" {
     aliceBlue: Palette["primary"];
   }
 
+  // define custom color options types
   interface PaletteOptions {
     black: PaletteOptions["primary"];
     davysGrey: PaletteOptions["primary"];
