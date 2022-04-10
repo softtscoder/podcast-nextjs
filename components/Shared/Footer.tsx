@@ -2,9 +2,11 @@ import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import Logo from "@/images/PodcastLogo.png";
-import GPodcast from "@/images/footer/GPodcasts.png";
-import Spotify from "@/images/footer/Spotify.png";
-import YouTube from "@/images/footer/YouTube.png";
+import GPodcast from "@/images/Footer/GPodcasts.png";
+import Spotify from "@/images/Footer/Spotify.png";
+import YouTube from "@/images/Footer/YouTube.png";
+import AppStore from "@/images/Footer/AppStore.png";
+import PlayStore from "@/images/Footer/PlayStore.png";
 import { FaTwitter, FaInstagram, FaTiktok } from "react-icons/fa";
 
 const footerLinks = [
@@ -59,7 +61,9 @@ const Footer = () => {
         <Typography sx={{ fontSize: "16px", fontWeight: "medium" }}>
           Listen to episodes on your fav platform:
         </Typography>
-        <Box>
+        <Box
+          sx={{ display: "flex", justifyContent: "space-between", my: "40px" }}
+        >
           <Image
             width="122px"
             height="22px"
@@ -68,6 +72,25 @@ const Footer = () => {
           />
           <Image width="80px" height="22px" src={Spotify} alt="Spotify-logo" />
           <Image width="94px" height="22px" src={YouTube} alt="YouTube-logo" />
+        </Box>
+        <Typography sx={{ fontSize: "16px", fontWeight: "medium", mt: "60px" }}>
+          App available on:
+        </Typography>
+        <Box
+          sx={{
+            mt: "20px",
+            display: "flex",
+            alignItems: "center",
+            gap: "20px",
+          }}
+        >
+          <Image width="30px" height="30px" src={AppStore} alt="Spotify-logo" />
+          <Image
+            width="30px"
+            height="30px"
+            src={PlayStore}
+            alt="YouTube-logo"
+          />
         </Box>
       </Grid>
     </Grid>
