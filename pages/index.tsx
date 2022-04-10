@@ -12,7 +12,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 const Home: NextPage = () => {
   return (
-    <Container maxWidth="lg" sx={{ height: "2000px" }}>
+    <Container maxWidth="lg">
       <Box
         sx={{
           my: 4,

@@ -23,7 +23,8 @@
     "@mui/material": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-icons": "^4.3.1"
   },
   "devDependencies": {
     "@types/node": "latest",
