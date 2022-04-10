@@ -20,6 +20,7 @@
       "@/*": ["./pages/*"],
       "@/components/*": ["./components/*"],
       "@/configs/*": ["./configs/*"],
+      "@/assets/*": ["./assets/*"],
       "@/utils/*": ["./utils/*"]
     }
   },
