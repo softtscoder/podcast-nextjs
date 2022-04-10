@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
+import ComposedLink from "@/components/Custom/ComposedLink";
 import Logo from "@/images/PodcastLogo.png";
 import GPodcast from "@/images/Footer/GPodcasts.png";
 import Spotify from "@/images/Footer/Spotify.png";
@@ -49,7 +50,18 @@ const Footer = () => {
           {footerLinks.map((link, index) => {
             return (
               <Grid key={`footerNav-${index}`} item xs={5} sx={{ mb: "20px" }}>
-                <Typography sx={{ fontSize: "16px", fontWeight: "medium" }}>
+                <Typography
+                  component={ComposedLink}
+                  to={link.to}
+                  sx={{
+                    fontSize: "16px",
+                    fontWeight: "medium",
+                    color: "black.main",
+                    "&:hover": {
+                      color: "vermillion.main",
+                    },
+                  }}
+                >
                   {link.title}
                 </Typography>
               </Grid>

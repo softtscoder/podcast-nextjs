@@ -21,6 +21,7 @@
       "@/components/*": ["components/*"],
       "@/configs/*": ["configs/*"],
       "@/utils/*": ["utils/*"],
+      "@/styles/*": ["styles/*"],
       "@/images/*": ["assets/images/*"]
     }
   },
