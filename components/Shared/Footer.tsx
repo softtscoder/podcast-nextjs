@@ -21,11 +21,8 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <Grid
-      container
-      sx={{ px: "140px", py: "80px", justifyContent: "space-between" }}
-    >
-      <Grid item xs={3}>
+    <Grid container sx={{ px: "140px", py: "80px" }}>
+      <Grid item xs={4}>
         <Box sx={{ display: "flex", alignItems: "end" }}>
           <Box sx={{ mr: "24px" }}>
             <Image width="74px" height="74px" src={Logo} alt="Brand-logo" />
@@ -37,7 +34,7 @@ const Footer = () => {
           </Typography>
         </Box>
         <Typography sx={{ fontSize: "14px", fontWeight: "medium", my: "40px" }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Lorem ipsum dolor sit amet, <br /> consectetur adipiscing elit.
         </Typography>
         <Box sx={{ display: "flex" }}>
           <FaTwitter style={{ fontSize: "24px", marginRight: "25px" }} />
