@@ -1,5 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
+// Get palette from theme
+const { palette } = createTheme();
 // Create a theme instance.
 const theme = createTheme({
   // Include font in MUI components.
@@ -8,6 +10,7 @@ const theme = createTheme({
   },
   // Override the default palette and add custom colors.
   palette: {
+    // mode: "dark" as PaletteMode,
     primary: {
       main: "#81ADC8",
       // contrastText: "#fff",
@@ -53,6 +56,16 @@ declare module "@mui/material/styles" {
     vermillion: PaletteOptions["primary"];
     champagne: PaletteOptions["primary"];
     aliceBlue: PaletteOptions["primary"];
+  }
+}
+
+declare module "@mui/material" {
+  interface ButtonPropsColorOverrides {
+    black: true;
+    davysGrey: true;
+    vermillion: true;
+    champagne: true;
+    aliceBlue: true;
   }
 }
 
