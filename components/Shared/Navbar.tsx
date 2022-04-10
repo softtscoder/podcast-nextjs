@@ -10,7 +10,7 @@ const Navbar = () => {
       position="sticky"
       sx={{
         background: "#F7EDE888",
-        backdropFilter: "blur(0.3rem)",
+        backdropFilter: "blur(10px)",
         boxShadow: "none",
         height: "6rem",
       }}
