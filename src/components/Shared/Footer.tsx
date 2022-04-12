@@ -1,13 +1,13 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
-import ComposedLink from "@/components/Custom/ComposedLink";
-import Logo from "@/images/PodcastLogo.png";
-import GPodcast from "@/images/Footer/GPodcasts.png";
-import Spotify from "@/images/Footer/Spotify.png";
-import YouTube from "@/images/Footer/YouTube.png";
-import AppStore from "@/images/Footer/AppStore.png";
-import PlayStore from "@/images/Footer/PlayStore.png";
+import ComposedLink from "@components/Custom/ComposedLink";
+import Logo from "@images/PodcastLogo.png";
+import GPodcast from "@images/Footer/GPodcasts.png";
+import Spotify from "@images/Footer/Spotify.png";
+import YouTube from "@images/Footer/YouTube.png";
+import AppStore from "@images/Footer/AppStore.png";
+import PlayStore from "@images/Footer/PlayStore.png";
 import { FaTwitter, FaInstagram, FaTiktok } from "react-icons/fa";
 import CircleIcon from "@mui/icons-material/Circle";
 

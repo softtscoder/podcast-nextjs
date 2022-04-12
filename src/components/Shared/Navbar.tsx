@@ -1,7 +1,7 @@
 import React from "react";
 import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
 import Image from "next/image";
-import Logo from "@/images/PodcastLogo.png";
+import Logo from "@images/PodcastLogo.png";
 import ExpandCircleDownOutlinedIcon from "@mui/icons-material/ExpandCircleDownOutlined";
 
 const Navbar = () => {

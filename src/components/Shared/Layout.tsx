@@ -1,8 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import { Box } from "@mui/material";
-import Footer from "@/components/Shared/Footer";
-import Navbar from "@/components/Shared/Navbar";
+import Footer from "@components/Shared/Footer";
+import Navbar from "@components/Shared/Navbar";
 
 interface LayoutProps {
   children: React.ReactNode;

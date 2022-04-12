@@ -17,12 +17,11 @@
     "incremental": true,
     "baseUrl": "./src",
     "paths": {
-      "@/pages*": ["pages/*"],
-      "@/components/*": ["components/*"],
-      "@/configs/*": ["configs/*"],
-      "@/utils/*": ["utils/*"],
-      "@/styles/*": ["styles/*"],
-      "@/images/*": ["assets/images/*"]
+      "@components/*": ["components/*"],
+      "@configs/*": ["configs/*"],
+      "@utils/*": ["utils/*"],
+      "@styles/*": ["styles/*"],
+      "@images/*": ["assets/images/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
