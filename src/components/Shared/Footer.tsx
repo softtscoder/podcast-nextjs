@@ -22,10 +22,10 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <Box sx={{ px: "140px", py: "80px" }}>
+    <Box sx={{ px: "140px", py: "40px" }}>
       <Grid
         container
-        sx={{ pb: "140px", borderBottom: "0.5px solid #4D4D4D4D" }}
+        sx={{ pb: "60px", borderBottom: "0.5px solid #4D4D4D4D" }}
       >
         <Grid item xs={4}>
           <Box sx={{ display: "flex", alignItems: "end" }}>
@@ -137,7 +137,7 @@ const Footer = () => {
         </Grid>
       </Grid>
       <Box
-        sx={{ my: "20px", display: "flex", justifyContent: "space-between" }}
+        sx={{ mt: "10px", display: "flex", justifyContent: "space-between" }}
       >
         <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <Typography sx={{ fontSize: "12px", fontWeight: "medium" }}>
