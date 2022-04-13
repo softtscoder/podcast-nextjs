@@ -20,7 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
         sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
       >
         <Navbar />
-        <Box component="main" sx={{ flexGrow: 1, p: 1 }}>
+        <Box component="main" sx={{ flexGrow: 1 }}>
           {children}
         </Box>
         <Footer />

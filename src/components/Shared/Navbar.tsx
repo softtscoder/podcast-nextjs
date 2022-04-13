@@ -9,7 +9,7 @@ const Navbar = () => {
     <AppBar
       position="sticky"
       sx={{
-        background: "#F7EDE888",
+        background: "#F7EDE8E8",
         backdropFilter: "blur(10px)",
         boxShadow: "none",
         height: "6rem",
