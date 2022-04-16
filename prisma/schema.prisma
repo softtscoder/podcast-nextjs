@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider             = "mysql"
+  referentialIntegrity = "prisma"
+  url                  = env("DATABASE_URL")
+  shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
+}
+
+model PodcastCatagory {
+  id               Int       @id @default(autoincrement())
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  title            String    @db.VarChar(255)
+  cover            String
+  googlePodcastUrl String?
+  spotifyUrl       String?
+  youtubeUrl       String?
+  podcast          Podcast[]
+}
+
+model Podcast {
+  id               Int             @id @default(autoincrement())
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  title            String          @db.VarChar(255)
+  cover            String
+  googlePodcastUrl String?
+  spotifyUrl       String?
+  youtubeUrl       String?
+  catagoryId       Int
+  PodcastCatagory  PodcastCatagory @relation(fields: [catagoryId], references: [id])
+}

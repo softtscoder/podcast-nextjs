@@ -19,25 +19,23 @@ import Illustration002 from "@images/Illustration/Illustration002.png";
 import ShadowButton from "@components/Custom/ShadowButton";
 import { SiGooglepodcasts, SiSpotify, SiYoutube } from "react-icons/si";
 import ComposedLink from "@components/Custom/ComposedLink";
+import { PodcastCatagory } from "@prisma/client";
+import prisma from "@utils/prisma";
 import "swiper/css/free-mode";
 import "swiper/css";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  const podcastCategories = await prisma.podcastCatagory.findMany();
   return {
-    props: {}, // will be passed to the page component as props
+    props: { podcastCategories }, // will be passed to the page component as props
   };
 };
 
-const Home: NextPage = () => {
-  const podcast = {
-    title: "Technology",
-    imageURL:
-      "https://i.ibb.co/TgHFqFs/microphone-for-audio-record-or-podcast-concept-single-microphone-on-dark-shadow-background-with-copy.jpg",
-    googlePodcastURL: "nothing",
-    youtubeURL: "nothing",
-    spotifyURL: "nothing",
-  };
+type iProps = {
+  podcastCategories: PodcastCatagory[];
+};
 
+const Home: NextPage<iProps> = ({ podcastCategories }) => {
   return (
     <Container
       maxWidth={false}
@@ -120,7 +118,7 @@ const Home: NextPage = () => {
           }}
           speed={5000}
         >
-          {new Array(10).fill(podcast)?.map((podcast: any, index: number) => {
+          {podcastCategories?.map((podcast: any, index: number) => {
             return (
               <SwiperSlide key={index + 400}>
                 <Paper
@@ -143,15 +141,15 @@ const Home: NextPage = () => {
                       padding: "20px",
                     }}
                   >
-                    <ComposedLink to={podcast.googlePodcastURL}>
+                    <ComposedLink to={podcast.gPodcastUrl}>
                       <SiGooglepodcasts
                         style={{ fontSize: "24px", color: "#fff" }}
                       />
                     </ComposedLink>
-                    <ComposedLink to={podcast.spotifyURL}>
+                    <ComposedLink to={podcast.spotifyUrl}>
                       <SiSpotify style={{ fontSize: "24px", color: "#fff" }} />
                     </ComposedLink>
-                    <ComposedLink to={podcast.youtubeURL}>
+                    <ComposedLink to={podcast.youtubeUrl}>
                       <SiYoutube style={{ fontSize: "24px", color: "#fff" }} />
                     </ComposedLink>
                   </Box>
@@ -163,7 +161,7 @@ const Home: NextPage = () => {
                       padding: "20px",
                     }}
                   >
-                    {podcast.title}
+                    {podcast.name}
                   </Typography>
                 </Paper>
               </SwiperSlide>
