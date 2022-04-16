@@ -1,11 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import prisma from "@utils/prisma";
-import iPodcast from "@interfaces/iPodcast";
+import { Podcast } from "@prisma/client";
 
 interface iResponse {
   success?: boolean;
   message?: string;
-  data?: iPodcast[] | iPodcast;
+  data?: Podcast | Podcast[];
 }
 
 export default async function handle(
@@ -15,13 +15,13 @@ export default async function handle(
   const { method } = req;
   switch (method) {
     case "GET":
-      const podcast = await prisma.podcast.findMany();
+      const podcast: Podcast[] = await prisma.podcast.findMany();
       res.json({ success: true, data: podcast });
       break;
 
     case "POST":
       try {
-        const result: iPodcast = await prisma.podcast.create({
+        const result: Podcast = await prisma.podcast.create({
           data: req.body,
         });
 
@@ -35,7 +35,7 @@ export default async function handle(
       break;
 
     default:
-      res.setHeader("Allow", ["GET"]);
+      res.setHeader("Allow", ["GET", "POST"]);
       res.status(405).end(`Method ${method} Not Allowed`);
   }
 }

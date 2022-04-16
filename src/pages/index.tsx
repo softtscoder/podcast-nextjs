@@ -25,7 +25,8 @@ import "swiper/css/free-mode";
 import "swiper/css";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const podcastCategories = await prisma.podcastCatagory.findMany();
+  const response: PodcastCatagory[] = await prisma.podcastCatagory.findMany();
+  const podcastCategories = JSON.parse(JSON.stringify(response));
   return {
     props: { podcastCategories }, // will be passed to the page component as props
   };
@@ -125,7 +126,7 @@ const Home: NextPage<iProps> = ({ podcastCategories }) => {
                   sx={{
                     height: "340px",
                     width: "340px",
-                    backgroundImage: `url(${podcast.imageURL})`,
+                    backgroundImage: `url(${podcast.cover})`,
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                     display: "flex",
@@ -141,7 +142,7 @@ const Home: NextPage<iProps> = ({ podcastCategories }) => {
                       padding: "20px",
                     }}
                   >
-                    <ComposedLink to={podcast.gPodcastUrl}>
+                    <ComposedLink to={podcast.googlePodcastUrl}>
                       <SiGooglepodcasts
                         style={{ fontSize: "24px", color: "#fff" }}
                       />
@@ -161,7 +162,7 @@ const Home: NextPage<iProps> = ({ podcastCategories }) => {
                       padding: "20px",
                     }}
                   >
-                    {podcast.name}
+                    {podcast.title}
                   </Typography>
                 </Paper>
               </SwiperSlide>
