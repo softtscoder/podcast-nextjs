@@ -27,7 +27,7 @@ export default async function handle(
 
         res.json({ success: true, data: result });
       } catch (error: any) {
-        res.json({
+        res.status(400).json({
           success: false,
           message: error.message,
         });
