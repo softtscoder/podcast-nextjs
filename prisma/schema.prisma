@@ -13,7 +13,7 @@ datasource db {
   shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
 }
 
-model PodcastCatagory {
+model PodcastCategory {
   id               Int       @id @default(autoincrement())
   createdAt        DateTime  @default(now())
   updatedAt        DateTime  @updatedAt
@@ -34,6 +34,6 @@ model Podcast {
   googlePodcastUrl String?
   spotifyUrl       String?
   youtubeUrl       String?
-  catagoryId       Int
-  PodcastCatagory  PodcastCatagory @relation(fields: [catagoryId], references: [id])
+  categoryId       Int
+  PodcastCategory  PodcastCategory @relation(fields: [categoryId], references: [id])
 }

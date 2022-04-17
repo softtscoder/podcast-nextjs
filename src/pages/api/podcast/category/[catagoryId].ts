@@ -1,11 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import prisma from "@utils/prisma";
-import { PodcastCatagory } from "@prisma/client";
+import { PodcastCategory } from "@prisma/client";
 
 interface iResponse {
   success?: boolean;
   message?: string;
-  data?: PodcastCatagory | null;
+  data?: PodcastCategory | null;
 }
 
 export default async function handle(
@@ -13,13 +13,13 @@ export default async function handle(
   res: NextApiResponse<iResponse>
 ) {
   const { method } = req;
-  const { catagoryId } = req.query;
+  const { categoryId } = req.query;
 
-  //   check if catagory id can be converted to a number
-  if (isNaN(Number(catagoryId))) {
+  //   check if category id can be converted to a number
+  if (isNaN(Number(categoryId))) {
     res.status(400).json({
       success: false,
-      message: "Invalid Podcast Catagory Id",
+      message: "Invalid Podcast Category Id",
     });
     return;
   }
@@ -27,27 +27,27 @@ export default async function handle(
   //   use switch to handle different request methods using try-catch
   switch (method) {
     case "GET":
-      const catagory: PodcastCatagory | null =
-        await prisma.podcastCatagory.findUnique({
+      const category: PodcastCategory | null =
+        await prisma.podcastCategory.findUnique({
           where: {
-            id: Number(catagoryId),
+            id: Number(categoryId),
           },
         });
-      if (catagory) {
-        res.json({ success: true, data: catagory });
+      if (category) {
+        res.json({ success: true, data: category });
       } else {
         res.status(400).json({
           success: false,
-          message: "Podcast Catagory not found",
+          message: "Podcast Category not found",
         });
       }
       break;
 
     case "PATCH":
       try {
-        const result: PodcastCatagory = await prisma.podcastCatagory.update({
+        const result: PodcastCategory = await prisma.podcastCategory.update({
           where: {
-            id: Number(catagoryId),
+            id: Number(categoryId),
           },
           data: req.body,
         });
@@ -62,9 +62,9 @@ export default async function handle(
 
     case "DELETE":
       try {
-        const result: PodcastCatagory = await prisma.podcastCatagory.delete({
+        const result: PodcastCategory = await prisma.podcastCategory.delete({
           where: {
-            id: Number(catagoryId),
+            id: Number(categoryId),
           },
         });
         res.json({ success: true, data: result });

@@ -19,13 +19,13 @@ import Illustration002 from "@images/Illustration/Illustration002.png";
 import ShadowButton from "@components/Custom/ShadowButton";
 import { SiGooglepodcasts, SiSpotify, SiYoutube } from "react-icons/si";
 import ComposedLink from "@components/Custom/ComposedLink";
-import { PodcastCatagory } from "@prisma/client";
+import { PodcastCategory } from "@prisma/client";
 import prisma from "@utils/prisma";
 import "swiper/css/free-mode";
 import "swiper/css";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const response: PodcastCatagory[] = await prisma.podcastCatagory.findMany();
+  const response: PodcastCategory[] = await prisma.podcastCategory.findMany();
   const podcastCategories = JSON.parse(JSON.stringify(response));
   return {
     props: { podcastCategories }, // will be passed to the page component as props
@@ -33,7 +33,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 type iProps = {
-  podcastCategories: PodcastCatagory[];
+  podcastCategories: PodcastCategory[];
 };
 
 const Home: NextPage<iProps> = ({ podcastCategories }) => {
