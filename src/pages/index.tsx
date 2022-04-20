@@ -1,19 +1,12 @@
 import * as React from "react";
 import type { GetServerSideProps, NextPage } from "next";
 import { Avatar, Box, Container, Grid, Paper, Typography } from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Autoplay } from "swiper";
 import Image from "next/image";
 import Vector009 from "@images/Vectors/Vector009.png";
-import Vector010 from "@images/Vectors/Vector010.png";
-import Vector011 from "@images/Vectors/Vector011.png";
 import Vector012 from "@images/Vectors/Vector012.png";
 import Scribble from "@images/Vectors/Scribble.png";
 import ScribbleBlack from "@images/Vectors/ScribbleBlack.png";
-import GooglePodcast from "@images/BrandIcons/GooglePodcast.png";
-import Spotify from "@images/BrandIcons/Spotify.png";
 import SpotifyIcon from "@images/BrandIcons/SpotifyIcon.png";
-import Youtube from "@images/BrandIcons/Youtube.png";
 import Illustration001 from "@images/Illustration/Illustration001.png";
 import Illustration002 from "@images/Illustration/Illustration002.png";
 import ShadowButton from "@components/Custom/ShadowButton";
@@ -23,6 +16,8 @@ import { PodcastCategory } from "@prisma/client";
 import prisma from "@utils/prisma";
 import "swiper/css/free-mode";
 import "swiper/css";
+import Banner from "@components/Home/Banner";
+import PodcastTypes from "@components/Home/PodcastTypes";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const response: PodcastCategory[] = await prisma.podcastCategory.findMany();
@@ -44,202 +39,12 @@ const Home: NextPage<iProps> = ({ podcastCategories }) => {
         p: "0 !important",
       }}
     >
-      <Grid
-        container
-        component="section"
-        sx={{
-          alignItems: "center",
-          justifyContent: "space-between",
-          bgcolor: "champagne.main",
-        }}
-      >
-        <Grid item xs={3} sx={{ display: "flex", alignItems: "center" }}>
-          <Image width="300px" height="400px" src={Vector010} alt="Image-alt" />
-        </Grid>
-        <Grid item xs={6} sx={{ textAlign: "center" }}>
-          <Typography
-            variant="h1"
-            component="h1"
-            sx={{ fontSize: "90px", fontWeight: "bold" }}
-          >
-            Your Daily
-          </Typography>
-          <Typography
-            variant="h1"
-            component="h1"
-            sx={{
-              fontSize: "90px",
-              fontWeight: "bold",
-              lineHeight: "0.7",
-              color: "vermillion.main",
-            }}
-          >
-            Podcast
-          </Typography>
-          <Typography
-            sx={{ fontSize: "16px", fontWeight: "medium", my: "40px" }}
-          >
-            We cover all kinds of categories and <br /> a weekly special guest.
-          </Typography>
-          <ShadowButton sx={{ height: "65px", width: "180px" }}>
-            SUBSCRIBE
-          </ShadowButton>
-        </Grid>
-        <Grid item xs={3}>
-          <Box sx={{ display: "flex", justifyContent: "end", px: "60px" }}>
-            <Image
-              layout="fixed"
-              width="150px"
-              height="215px"
-              src={Vector011}
-              alt="Image-alt"
-            />
-          </Box>
-        </Grid>
-      </Grid>
-      <Box
-        component="section"
-        sx={{
-          bgcolor: "champagne.main",
-          py: "80px",
-          "& .swiper-wrapper": {
-            transitionTimingFunction: "linear !important",
-          },
-        }}
-      >
-        <Swiper
-          slidesPerView={4}
-          spaceBetween={150}
-          loop={true}
-          freeMode={true}
-          modules={[FreeMode, Autoplay]}
-          autoplay={{
-            delay: 0,
-            disableOnInteraction: false,
-          }}
-          speed={5000}
-        >
-          {podcastCategories?.map((podcast: any, index: number) => {
-            return (
-              <SwiperSlide key={index + 400}>
-                <Paper
-                  sx={{
-                    height: "340px",
-                    width: "340px",
-                    backgroundImage: `url(${podcast.cover})`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "end",
-                      gap: "10px",
-                      padding: "20px",
-                    }}
-                  >
-                    <ComposedLink to={podcast.googlePodcastUrl}>
-                      <SiGooglepodcasts
-                        style={{ fontSize: "24px", color: "#fff" }}
-                      />
-                    </ComposedLink>
-                    <ComposedLink to={podcast.spotifyUrl}>
-                      <SiSpotify style={{ fontSize: "24px", color: "#fff" }} />
-                    </ComposedLink>
-                    <ComposedLink to={podcast.youtubeUrl}>
-                      <SiYoutube style={{ fontSize: "24px", color: "#fff" }} />
-                    </ComposedLink>
-                  </Box>
-                  <Typography
-                    sx={{
-                      fontSize: "36px",
-                      fontWeight: "bold",
-                      color: "primary.main",
-                      padding: "20px",
-                    }}
-                  >
-                    {podcast.title}
-                  </Typography>
-                </Paper>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-        <Box
-          sx={{
-            mx: "140px",
-            my: "100px",
-            borderTop: "1px solid black",
-            borderBottom: "1px solid black",
-            height: "120px",
-          }}
-        >
-          <Grid container sx={{ height: 1 }}>
-            <Grid item xs={3} sx={{ display: "flex", alignItems: "center" }}>
-              <Typography
-                sx={{
-                  fontSize: "22.6px",
-                  fontWeight: "bold",
-                }}
-              >
-                Supported by:
-              </Typography>
-            </Grid>
-            <Grid
-              item
-              xs={3}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Image
-                height="35px"
-                width="130px"
-                src={Spotify}
-                alt="podcastLogo"
-              />
-            </Grid>
-            <Grid
-              item
-              xs={3}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Image
-                height="35px"
-                width="200px"
-                src={GooglePodcast}
-                alt="podcastLogo"
-              />
-            </Grid>
-            <Grid
-              item
-              xs={3}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Image
-                height="30px"
-                width="125px"
-                src={Youtube}
-                alt="podcastLogo"
-              />
-            </Grid>
-          </Grid>
-        </Box>
-      </Box>
+      {/* banner */}
+      <Banner />
+
+      {/* podcast types */}
+      <PodcastTypes podcastCategories={podcastCategories} />
+
       <Box
         component="section"
         sx={{
