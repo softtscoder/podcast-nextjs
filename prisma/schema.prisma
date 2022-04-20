@@ -3,14 +3,12 @@
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["referentialIntegrity"]
 }
 
 datasource db {
-  provider             = "mysql"
-  referentialIntegrity = "prisma"
-  url                  = env("DATABASE_URL")
-  shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
+  provider             = "postgresql"
+  url                  = "postgres://jirwatlhqnbvjv:79bb4f3074d777d427bfe9cac0fd7f2d01bfac60dd9c65ef093e6a4b1befafe1@ec2-52-203-118-49.compute-1.amazonaws.com:5432/dabgoq76jechrj"
+  shadowDatabaseUrl    = "postgres://cihganimkewiuw:bf3f5f0a3b1d75ba46212b08265aeb1b0430006b82b5a44ec11f322e5f178b36@ec2-52-73-155-171.compute-1.amazonaws.com:5432/d8q9vss82fiojm"
 }
 
 model PodcastCategory {
