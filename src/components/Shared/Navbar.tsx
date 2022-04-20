@@ -3,6 +3,7 @@ import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
 import Image from "next/image";
 import Logo from "@images/PodcastLogo.png";
 import ExpandCircleDownOutlinedIcon from "@mui/icons-material/ExpandCircleDownOutlined";
+import ShadowButton from "@components/Custom/ShadowButton";
 
 const Navbar = () => {
   return (
@@ -74,19 +75,18 @@ const Navbar = () => {
           >
             RECENT EPISODES
           </Button>
-          <Button
+          <ShadowButton
             variant="contained"
             color="black"
             sx={{
               height: "2.7rem",
               width: "10rem",
-              borderRadius: "0.6rem",
               fontSize: "14px",
               fontWeight: "bold",
             }}
           >
             SUBSCRIBE
-          </Button>
+          </ShadowButton>
         </Box>
       </Toolbar>
     </AppBar>
