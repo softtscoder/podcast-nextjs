@@ -10,8 +10,6 @@ import Scribble from "@images/Vectors/Scribble.png";
 import ScribbleBlack from "@images/Vectors/ScribbleBlack.png";
 import { PodcastCategory } from "@prisma/client";
 import prisma from "@utils/prisma";
-import "swiper/css/free-mode";
-import "swiper/css";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const response: PodcastCategory[] = await prisma.podcastCategory.findMany();
