@@ -12,6 +12,7 @@ import Promotional from "@components/Home/Promotional";
 import Reviews from "@components/Home/Reviews";
 import Benefits from "@components/Home/Benefits";
 import RecentEpisodes from "@components/Home/RecentEpisodes";
+import Sponsor from "@components/Home/Sponsor";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const response: PodcastCategory[] = await prisma.podcastCategory.findMany();
@@ -89,6 +90,20 @@ const Home: NextPage<iProps> = ({ podcastCategories }) => {
 
       {/* recent episodes */}
       <RecentEpisodes />
+
+      <Box
+        sx={{
+          position: "absolute",
+          mt: "-78px",
+          left: "45%",
+          right: 0,
+        }}
+      >
+        <Image height="150px" width="150px" src={ScribbleBlack} alt="bn" />
+      </Box>
+
+      {/* sponsor */}
+      <Sponsor />
 
       {/* end of home */}
     </React.Fragment>

@@ -1,21 +1,30 @@
 import * as React from "react";
 import NextLink, { LinkProps as NextLinkProps } from "next/link";
-import { styled } from "@mui/material/styles";
+import { Link, SxProps } from "@mui/material";
 
 // Add support for the sx prop for consistency with the other branches.
-const Anchor = styled("a")({});
 
 interface ComposedLinkProps
   extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">,
     Omit<NextLinkProps, "href" | "as"> {
   to: NextLinkProps["href"];
   linkAs?: NextLinkProps["as"];
+  sx?: SxProps;
 }
 
 const ComposedLink = React.forwardRef<HTMLAnchorElement, ComposedLinkProps>(
   function ComposedLink(props, ref) {
-    const { to, linkAs, replace, scroll, shallow, prefetch, locale, ...other } =
-      props;
+    const {
+      to,
+      linkAs,
+      replace,
+      scroll,
+      shallow,
+      prefetch,
+      locale,
+      sx,
+      ...other
+    } = props;
 
     return (
       <NextLink
@@ -28,7 +37,11 @@ const ComposedLink = React.forwardRef<HTMLAnchorElement, ComposedLinkProps>(
         passHref
         locale={locale}
       >
-        <Anchor ref={ref} {...other} />
+        <Link
+          sx={{ textDecoration: "none", color: "#000", ...sx }}
+          ref={ref}
+          {...other}
+        />
       </NextLink>
     );
   }
