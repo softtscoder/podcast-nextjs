@@ -19,11 +19,11 @@ type iProps = {
 const PodcastTypes: NextPage<iProps> = ({ podcastCategories }) => {
   const settings = {
     infinite: true,
-    slidesToShow: 3.4,
-    slidesToScroll: 0.5,
+    slidesToShow: 3.5,
+    slidesToScroll: 0.25,
     autoplay: true,
     pauseOnHover: true,
-    speed: 1500,
+    speed: 10000,
     autoplaySpeed: 0,
     cssEase: "linear",
   };
@@ -34,9 +34,6 @@ const PodcastTypes: NextPage<iProps> = ({ podcastCategories }) => {
       sx={{
         bgcolor: "champagne.main",
         py: "80px",
-        "& .swiper-wrapper": {
-          transitionTimingFunction: "linear !important",
-        },
       }}
     >
       <Box sx={{ mx: 5 }}>

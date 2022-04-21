@@ -63,7 +63,7 @@ const Reviews = () => {
       >
         Their experience throughout every platform
       </Typography>
-      <Box sx={{ mt: 5 }}>
+      <Box sx={{ mt: "100px" }}>
         <Slider
           ref={(slider: any) => (customSlider.current = slider)}
           {...settings}
@@ -77,6 +77,8 @@ const Reviews = () => {
                     height: "310px",
                     width: "520px",
                     padding: "40px",
+                    display: "flex",
+                    flexDirection: "column",
                   }}
                 >
                   <Typography
@@ -84,16 +86,17 @@ const Reviews = () => {
                       fontSize: "96px",
                       fontWeight: "bold",
                       color: "vermillion.main",
-                      lineHeight: "0.5",
-                      marginBottom: "-10px",
+                      lineHeight: "0.7",
+                      marginBottom: "-20px",
                     }}
                   >
                     {`"`}
                   </Typography>
                   <Typography
                     sx={{
-                      fontSize: "24px",
+                      fontSize: "22.65px",
                       fontWeight: "medium",
+                      flexGrow: 1,
                     }}
                   >
                     Lorem ipsum dolor sit amet consectet piscing elit, sed do
