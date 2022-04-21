@@ -1,5 +1,5 @@
 import * as React from "react";
-import type { GetServerSideProps, NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import { PodcastCategory } from "@prisma/client";
 import prisma from "@utils/prisma";
 import Scribble from "@components/Custom/Scribble";
@@ -12,7 +12,7 @@ import Benefits from "@components/Home/Benefits";
 import RecentEpisodes from "@components/Home/RecentEpisodes";
 import Sponsor from "@components/Home/Sponsor";
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const response: PodcastCategory[] = await prisma.podcastCategory.findMany();
   const podcastCategories = JSON.parse(JSON.stringify(response));
   return {
