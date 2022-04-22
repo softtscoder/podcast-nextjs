@@ -1,11 +1,37 @@
 import React from "react";
-import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Button,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import Image from "next/image";
 import Logo from "@images/PodcastLogo.png";
 import ExpandCircleDownOutlinedIcon from "@mui/icons-material/ExpandCircleDownOutlined";
 import ShadowButton from "@components/Custom/ShadowButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 const Navbar = () => {
+  const [open, setOpen] = React.useState(true);
+  const toggleDrawer = (event: React.KeyboardEvent | React.MouseEvent) => {
+    if (
+      event.type === "keydown" &&
+      ((event as React.KeyboardEvent).key === "Tab" ||
+        (event as React.KeyboardEvent).key === "Shift")
+    ) {
+      return;
+    }
+
+    setOpen(!open);
+  };
+
   return (
     <AppBar
       position="sticky"
@@ -20,23 +46,37 @@ const Navbar = () => {
         variant="dense"
         component="nav"
         sx={{
-          display: "flex",
-          justifyContent: "space-around",
-          alignItems: "center",
           my: "1.6rem",
-          mx: "8rem",
+          mx: { xs: "1rem", md: "8rem" },
         }}
       >
-        <Box sx={{ mr: "8rem" }}>
-          <Image width="74px" height="74px" src={Logo} alt="Brand-logo" />
+        {/* Menu Icon only for small device */}
+        <Box sx={{ position: "relative", width: 0 }}>
+          <IconButton
+            onClick={toggleDrawer}
+            size="large"
+            edge="start"
+            sx={{ display: { xs: "inline", md: "none" }, ml: "10px" }}
+          >
+            <MenuIcon />
+          </IconButton>
         </Box>
+
+        {/* Responsive logo */}
         <Box
           sx={{
-            display: "flex",
-            flexGrow: 1,
+            flexGrow: { xs: 1, md: 0 },
+            display: { xs: "flex", md: "block" },
+            marginRight: { xs: 0, md: "8rem" },
+            justifyContent: "center",
             alignItems: "center",
           }}
         >
+          <Image width="74px" height="74px" src={Logo} alt="Brand-logo" />
+        </Box>
+
+        {/* Navigation only for large device */}
+        <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
           <Typography
             sx={{ fontSize: "16px", fontWeight: "bold", mr: "3.5rem" }}
           >
@@ -59,7 +99,13 @@ const Navbar = () => {
             <ExpandCircleDownOutlinedIcon sx={{ height: "0.9rem" }} />
           </Typography>
         </Box>
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box
+          sx={{
+            flexGrow: 0,
+            display: { xs: "none", md: "flex" },
+            alignItems: "center",
+          }}
+        >
           <Button
             variant="outlined"
             color="black"
@@ -89,6 +135,60 @@ const Navbar = () => {
           </ShadowButton>
         </Box>
       </Toolbar>
+      <Drawer
+        sx={{ display: { sm: "block", md: "none" } }}
+        anchor="left"
+        open={open}
+        onClose={toggleDrawer}
+      >
+        <Box
+          sx={{
+            width: 200,
+            height: 1,
+            background: "#F7EDE8E8",
+            backdropFilter: "blur(10px)",
+          }}
+          role="presentation"
+          onClick={toggleDrawer}
+          onKeyDown={toggleDrawer}
+        >
+          <List
+            sx={{
+              mt: "6rem",
+              "& .MuiListItem-button": {
+                borderTop: 1,
+                borderBottom: 1,
+              },
+              "& .MuiListItem-button:last-child": {
+                borderTop: "none",
+              },
+            }}
+          >
+            <ListItem button>
+              <Typography
+                sx={{
+                  fontSize: "18px",
+                  fontWeight: "bold",
+                  mx: "auto",
+                }}
+              >
+                Episodes
+              </Typography>
+            </ListItem>
+            <ListItem button>
+              <Typography
+                sx={{
+                  fontSize: "18px",
+                  fontWeight: "bold",
+                  mx: "auto",
+                }}
+              >
+                About
+              </Typography>
+            </ListItem>
+          </List>
+        </Box>
+      </Drawer>
     </AppBar>
   );
 };
