@@ -25,7 +25,11 @@ const Footer = () => {
     <Box sx={{ px: "140px", py: "40px" }}>
       <Grid
         container
-        sx={{ pb: "60px", borderBottom: "0.5px solid #4D4D4D4D" }}
+        sx={{
+          pb: "60px",
+          borderBottom: "0.5px solid",
+          borderColor: "davysGrey.main",
+        }}
       >
         <Grid item xs={4}>
           <Box sx={{ display: "flex", alignItems: "end" }}>

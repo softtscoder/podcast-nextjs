@@ -72,7 +72,8 @@ const Sponsor = () => {
     <Box
       component="section"
       sx={{
-        py: "100px",
+        pt: "100px",
+        pb: "150px",
       }}
     >
       <Box
@@ -83,6 +84,7 @@ const Sponsor = () => {
       >
         <Typography
           component="div"
+          gutterBottom
           sx={{
             fontSize: "60px",
             fontWeight: "bold",
@@ -117,7 +119,7 @@ const Sponsor = () => {
       <Grid
         container
         columnSpacing={2}
-        sx={{ px: "100px", mt: "100px", position: "relative" }}
+        sx={{ px: "100px", mt: "100px", position: "relative", width: 1 }}
       >
         <Box
           sx={{

@@ -157,8 +157,9 @@ const RecentEpisodes = () => {
                           sx={{
                             fontSize: "12px",
                             fontWeight: "medium",
-                            color: "#4D4D4D",
-                            border: "1px solid #4D4D4D",
+                            border: "1px solid",
+                            borderColor: "davysGrey.main",
+                            color: "davysGrey.main",
                             borderRadius: "4px",
                             padding: "6px 12px",
                           }}
