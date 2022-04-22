@@ -17,7 +17,7 @@ const Promotional = () => {
     >
       <Typography
         sx={{
-          fontSize: "60px",
+          fontSize: { xs: "30px", md: "60px" },
           fontWeight: "bold",
           textAlign: "center",
           my: "60px",
@@ -26,7 +26,7 @@ const Promotional = () => {
         Talk. Listen. Get inspired <br /> by every minute of it.
       </Typography>
       <Grid container>
-        <Grid item xs={6} sx={{ padding: 12 }}>
+        <Grid item xs={12} md={6} sx={{ padding: 12 }}>
           <Box
             sx={{
               display: "flex",
@@ -47,7 +47,7 @@ const Promotional = () => {
             ac ultrices odio.
           </Typography>
         </Grid>
-        <Grid item xs={6} sx={{ padding: 12 }}>
+        <Grid item xs={12} md={6} sx={{ padding: 12 }}>
           <Box
             sx={{
               display: "flex",
@@ -73,18 +73,25 @@ const Promotional = () => {
         sx={{
           position: "relative",
           textAlign: "center",
-          padding: "40px",
+          padding: { xs: "20px", md: "40px" },
           bgcolor: "champagne.main",
-          mx: "140px",
+          mx: { xs: "20px", md: "140px" },
           marginBottom: "80px",
         }}
       >
-        <Box sx={{ position: "absolute", top: -70, right: -70 }}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: -70,
+            right: -70,
+            display: { xs: "none", md: "block" },
+          }}
+        >
           <Image height="200px" width="200px" src={Vector009} alt="sdv" />
         </Box>
         <Typography
           sx={{
-            fontSize: "95px",
+            fontSize: { xs: "65px", md: "95px" },
             fontWeight: "bold",
             color: "vermillion.main",
             lineHeight: "0.5",
@@ -94,7 +101,7 @@ const Promotional = () => {
         </Typography>
         <Typography
           sx={{
-            fontSize: "36px",
+            fontSize: { xs: "22px", md: "36px" },
             fontWeight: "bold",
           }}
         >
@@ -105,6 +112,7 @@ const Promotional = () => {
           sx={{
             mt: "40px",
             display: "flex",
+            flexDirection: { xs: "column", md: "row" },
             justifyContent: "center",
             alignItems: "center",
             gap: "10px",
@@ -133,7 +141,14 @@ const Promotional = () => {
             Social Community Manager
           </Typography>
         </Box>
-        <Box sx={{ position: "absolute", bottom: 30, left: -60 }}>
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: 30,
+            left: -60,
+            display: { xs: "none", md: "block" },
+          }}
+        >
           <Image height="120px" width="120px" src={Vector012} alt="sdv" />
         </Box>
       </Box>
