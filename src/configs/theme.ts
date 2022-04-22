@@ -36,6 +36,40 @@ const theme = createTheme({
       // contrastText: "#fff",
     },
   },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          scrollbarColor: "#CD4631 #F7EDE8",
+          "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
+            backgroundColor: "#F7EDE8",
+            width: "15px",
+          },
+          "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
+            borderRadius: 8,
+            backgroundColor: "#CD4631",
+            minHeight: 24,
+            border: "3px solid #F7EDE8",
+          },
+          "&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus":
+            {
+              backgroundColor: "#81ADC8",
+            },
+          "&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active":
+            {
+              backgroundColor: "#CD4631",
+            },
+          "&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover":
+            {
+              backgroundColor: "#81ADC8",
+            },
+          "&::-webkit-scrollbar-corner, & *::-webkit-scrollbar-corner": {
+            backgroundColor: "#CD4631",
+          },
+        },
+      },
+    },
+  },
 });
 
 // define custom colors: https://mui.com/material-ui/customization/palette/
