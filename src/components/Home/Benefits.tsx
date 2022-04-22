@@ -78,7 +78,8 @@ const Benefits = () => {
     <Box
       component="section"
       sx={{
-        padding: "140px",
+        py: "140px",
+        px: { xs: "20px", md: "140px" },
       }}
     >
       <Box
@@ -90,7 +91,7 @@ const Benefits = () => {
         <Typography
           component="div"
           sx={{
-            fontSize: "60px",
+            fontSize: { xs: "40px", md: "60px" },
             fontWeight: "bold",
             textAlign: "center",
             position: "relative",
@@ -104,6 +105,7 @@ const Benefits = () => {
               right: -95,
               top: -120,
               transform: "rotate(14.3deg)",
+              display: { xs: "none", md: "block" },
             }}
           >
             <Image height="240px" width="240px" src={Vector007} alt="bn" />
@@ -113,7 +115,7 @@ const Benefits = () => {
       </Box>
       <Typography
         sx={{
-          fontSize: "22.65px",
+          fontSize: { xs: "18px", md: "22.65px" },
           fontWeight: "medium",
           textAlign: "center",
           mb: "100px",
@@ -124,7 +126,7 @@ const Benefits = () => {
       <Grid container rowSpacing={10}>
         {benefitCards.map((benefit, index) => {
           return (
-            <Grid item xs={4} key={index}>
+            <Grid item xs={12} md={4} key={index}>
               <Box
                 sx={{
                   height: "100px",
