@@ -12,6 +12,7 @@ import Benefits from "@components/Home/Benefits";
 import RecentEpisodes from "@components/Home/RecentEpisodes";
 import Sponsor from "@components/Home/Sponsor";
 import ArticleNews from "@components/Home/ArticleNews";
+import DownloadApp from "@components/Home/DownloadApp";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const response: PodcastCategory[] = await prisma.podcastCategory.findMany();
@@ -63,6 +64,11 @@ const Home: NextPage<iProps> = ({ podcastCategories }) => {
 
       {/* article and news */}
       <ArticleNews />
+
+      <ScribbleRed />
+
+      {/* app downloads */}
+      <DownloadApp />
 
       {/* end of home */}
     </React.Fragment>

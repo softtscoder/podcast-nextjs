@@ -22,7 +22,7 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <Box sx={{ px: "140px", py: "40px" }}>
+    <Box sx={{ px: "140px", pb: "40px", pt: "100px" }}>
       <Grid
         container
         sx={{
