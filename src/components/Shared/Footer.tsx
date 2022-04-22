@@ -22,7 +22,13 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <Box sx={{ px: "140px", pb: "40px", pt: "100px" }}>
+    <Box
+      sx={{
+        px: { xs: "20px", md: "140px" },
+        pb: "40px",
+        pt: { xs: "50px", md: "100px" },
+      }}
+    >
       <Grid
         container
         sx={{
@@ -31,7 +37,7 @@ const Footer = () => {
           borderColor: "davysGrey.main",
         }}
       >
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4} sx={{ padding: "10px" }}>
           <Box sx={{ display: "flex", alignItems: "end" }}>
             <Box sx={{ mr: "24px" }}>
               <Image width="74px" height="74px" src={Logo} alt="Brand-logo" />
@@ -43,24 +49,29 @@ const Footer = () => {
             </Typography>
           </Box>
           <Typography
-            sx={{ fontSize: "14px", fontWeight: "medium", my: "40px" }}
+            sx={{
+              fontSize: "14px",
+              fontWeight: "medium",
+              my: { xs: "10px", md: "40px" },
+            }}
           >
-            Lorem ipsum dolor sit amet, <br /> consectetur adipiscing elit.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </Typography>
-          <Box sx={{ display: "flex" }}>
+          <Box sx={{ display: "flex", my: { xs: "25px", md: 0 } }}>
             <FaTwitter style={{ fontSize: "24px", marginRight: "25px" }} />
             <FaInstagram style={{ fontSize: "24px", marginRight: "25px" }} />
             <FaTiktok style={{ fontSize: "24px" }} />
           </Box>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4} sx={{ padding: "10px" }}>
           <Grid container sx={{ justifyContent: "space-between" }}>
             {footerLinks.map((link, index) => {
               return (
                 <Grid
                   key={`footerNav-${index}`}
                   item
-                  xs={5}
+                  xs={12}
+                  md={5}
                   sx={{ mb: "20px" }}
                 >
                   <Typography
@@ -82,7 +93,7 @@ const Footer = () => {
             })}
           </Grid>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4} sx={{ padding: "10px" }}>
           <Typography sx={{ fontSize: "16px", fontWeight: "medium" }}>
             Listen to episodes on your fav platform:
           </Typography>
@@ -90,7 +101,7 @@ const Footer = () => {
             sx={{
               display: "flex",
               justifyContent: "space-between",
-              my: "40px",
+              my: { xs: "30px", md: "40px" },
             }}
           >
             <Image
@@ -143,7 +154,14 @@ const Footer = () => {
       <Box
         sx={{ mt: "10px", display: "flex", justifyContent: "space-between" }}
       >
-        <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            flexDirection: { xs: "column", md: "row" },
+          }}
+        >
           <Typography sx={{ fontSize: "12px", fontWeight: "medium" }}>
             ©2022. All Rights Reserved.
           </Typography>
