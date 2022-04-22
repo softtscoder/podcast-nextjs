@@ -40,7 +40,7 @@ const ArticleNews = () => {
         variant="h2"
         gutterBottom
         sx={{
-          fontSize: "60px",
+          fontSize: { xs: "40px", md: "60px" },
           fontWeight: "bold",
           textAlign: "center",
         }}
@@ -49,7 +49,7 @@ const ArticleNews = () => {
       </Typography>
       <Typography
         sx={{
-          fontSize: "22.65px",
+          fontSize: { xs: "18px", md: "22.65px" },
           fontWeight: "medium",
           textAlign: "center",
           color: "davysGrey.main",
@@ -59,8 +59,12 @@ const ArticleNews = () => {
       </Typography>
       <Grid
         container
-        columnSpacing={3}
-        sx={{ mt: "60px", px: "140px", position: "relative", width: 1 }}
+        sx={{
+          mt: { xs: "30px", md: "60px" },
+          px: { xs: "20px", md: "140px" },
+          position: "relative",
+          width: 1,
+        }}
       >
         <Box
           sx={{
@@ -69,6 +73,7 @@ const ArticleNews = () => {
             right: 50,
             transform: "rotate(135deg)",
             zIndex: -5,
+            display: { xs: "none", md: "block" },
           }}
         >
           <Image height="185px" width="185px" src={Vector007} alt="bn" />
@@ -80,6 +85,7 @@ const ArticleNews = () => {
             left: 60,
             transform: "rotate(21.97deg)",
             zIndex: -5,
+            display: { xs: "none", md: "block" },
           }}
         >
           <Image height="240px" width="240px" src={Vector004} alt="bn" />
@@ -91,13 +97,14 @@ const ArticleNews = () => {
               item
               xs={12}
               sm={6}
+              sx={{ padding: "10px" }}
               component={ComposedLink}
               to={`/article/${article.title}`}
             >
               <Paper
                 elevation={3}
                 sx={{
-                  height: "610px",
+                  height: { xs: "auto", md: "610px" },
                   padding: "16px !important",
                   border: "1px solid",
                   borderRadius: "8px",
@@ -115,7 +122,7 @@ const ArticleNews = () => {
                 />
                 <Typography
                   sx={{
-                    fontSize: "14px",
+                    fontSize: { xs: "12px", md: "14px" },
                     fontWeight: "bold",
                     color: "davysGrey.main",
                     marginTop: "40px",
@@ -126,7 +133,7 @@ const ArticleNews = () => {
                 <Typography
                   gutterBottom
                   sx={{
-                    fontSize: "36.65px",
+                    fontSize: { xs: "25px", md: "36.65px" },
                     fontWeight: "bold",
                     "&:hover": {
                       color: "vermillion.main",
@@ -137,7 +144,7 @@ const ArticleNews = () => {
                 </Typography>
                 <Typography
                   sx={{
-                    fontSize: "14px",
+                    fontSize: { xs: "12px", md: "14px" },
                     fontWeight: "medium",
                     color: "davysGrey.main",
                   }}
@@ -146,7 +153,7 @@ const ArticleNews = () => {
                     ? article?.description.substring(0, 190) + " ..."
                     : article?.description}
                 </Typography>
-                <Divider sx={{ my: "25px" }} />
+                <Divider sx={{ my: { xs: "10px", md: "25px" } }} />
                 <Box
                   sx={{
                     display: "flex",
@@ -160,10 +167,10 @@ const ArticleNews = () => {
                         <Typography
                           key={index}
                           sx={{
-                            fontSize: "12px",
+                            fontSize: { xs: "9px", md: "12px" },
                             fontWeight: "medium",
                             color: "davysGrey.main",
-                            padding: "6px 12px",
+                            padding: { xs: "3px 6px", md: "6px 12px" },
                             border: "1px solid",
                             borderColor: "davysGrey.main",
                             borderRadius: "4px",
@@ -176,7 +183,7 @@ const ArticleNews = () => {
                   </Box>
                   <Typography
                     sx={{
-                      fontSize: "12px",
+                      fontSize: { xs: "9px", md: "12px" },
                       fontWeight: "bold",
                     }}
                   >
@@ -192,7 +199,7 @@ const ArticleNews = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          marginTop: "100px",
+          marginTop: { xs: "50px", md: "100px" },
         }}
       >
         <ShadowButton

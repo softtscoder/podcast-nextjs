@@ -86,7 +86,7 @@ const Sponsor = () => {
           component="div"
           gutterBottom
           sx={{
-            fontSize: { xs: "35px", md: "60px" },
+            fontSize: { xs: "40px", md: "60px" },
             fontWeight: "bold",
             textAlign: "center",
             position: "relative",
@@ -150,7 +150,7 @@ const Sponsor = () => {
         </Box>
         {packageInfo.map((item, index) => {
           return (
-            <Grid key={index} item xs={12} sm={4} sx={{ p: "10px" }}>
+            <Grid key={index} item xs={12} sm={4} sx={{ padding: "10px" }}>
               <Box
                 sx={{
                   border: "1.5px solid",
@@ -215,7 +215,7 @@ const Sponsor = () => {
                   <ShadowButton
                     sx={{
                       width: "160px",
-                      height: "60px",
+                      height: { xs: "50px", md: "60px" },
                     }}
                   >
                     {item?.buttonText}

@@ -30,19 +30,29 @@ const DownloadApp = () => {
       >
         <Box
           component="span"
-          sx={{ position: "absolute", bottom: -450, left: -85 }}
+          sx={{
+            position: "absolute",
+            bottom: -450,
+            left: -85,
+            display: { xs: "none", md: "block" },
+          }}
         >
           <Image height="960px" width="500px" src={Illustration003} alt="sdv" />
         </Box>
         <Box
           component="span"
-          sx={{ position: "absolute", bottom: -145, right: -260 }}
+          sx={{
+            position: "absolute",
+            bottom: -145,
+            right: -260,
+            display: { xs: "none", md: "block" },
+          }}
         >
           <Image height="700px" width="580px" src={Illustration004} alt="sdv" />
         </Box>
         <Typography
           sx={{
-            fontSize: "14px",
+            fontSize: { xs: "10px", md: "14px" },
             fontWeight: "bold",
             padding: "3px 6px",
             color: "vermillion.main",
@@ -54,7 +64,7 @@ const DownloadApp = () => {
         </Typography>
         <Typography
           sx={{
-            fontSize: "60px",
+            fontSize: { xs: "40px", md: "60px" },
             fontWeight: "bold",
             marginTop: "20px",
             marginBottom: "-20px",
@@ -64,7 +74,7 @@ const DownloadApp = () => {
         </Typography>
         <Typography
           sx={{
-            fontSize: "60px",
+            fontSize: { xs: "40px", md: "60px" },
             fontWeight: "bold",
           }}
         >
@@ -72,7 +82,7 @@ const DownloadApp = () => {
         </Typography>
         <Typography
           sx={{
-            fontSize: "22.65px",
+            fontSize: { xs: "18px", md: "22.65px" },
             fontWeight: "medium",
             color: "davysGrey.main",
             marginTop: "28px",
@@ -84,13 +94,18 @@ const DownloadApp = () => {
           sx={{
             width: "210px",
             height: "60px",
-            marginTop: "140px",
+            marginTop: { xs: "50px", md: "140px" },
             position: "relative",
           }}
         >
           <Box
             component="span"
-            sx={{ position: "absolute", top: -35, right: -35 }}
+            sx={{
+              position: "absolute",
+              top: -35,
+              right: -35,
+              display: { xs: "none", md: "block" },
+            }}
           >
             <Image height="60px" width="60px" src={Vector008} alt="sdv" />
           </Box>
@@ -98,7 +113,7 @@ const DownloadApp = () => {
         </ShadowButton>
         <Typography
           sx={{
-            fontSize: "14px",
+            fontSize: { xs: "12px", md: "14px" },
             fontWeight: "medium",
             marginTop: "24px",
           }}

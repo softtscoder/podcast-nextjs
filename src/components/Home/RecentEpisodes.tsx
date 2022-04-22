@@ -78,7 +78,7 @@ const RecentEpisodes = () => {
                       justifyContent: "end",
                       gap: "10px",
                       padding: "5px 10px",
-                      height: { xs: "130px", md: "170px" },
+                      height: { xs: "auto", md: "170px" },
                       width: 1,
                       backgroundImage: `url("https://i.ibb.co/TgHFqFs/microphone-for-audio-record-or-podcast-concept-single-microphone-on-dark-shadow-background-with-copy.jpg")`,
                       backgroundRepeat: "no-repeat",
