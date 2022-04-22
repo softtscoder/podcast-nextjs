@@ -10,6 +10,8 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import Vector008 from "@images/Vectors/Vector008.png";
+import Vector009 from "@images/Vectors/Vector009.png";
+import Vector013 from "@images/Vectors/Vector013.png";
 import ShadowButton from "@components/Custom/ShadowButton";
 import CircleIcon from "@mui/icons-material/Circle";
 
@@ -112,7 +114,31 @@ const Sponsor = () => {
       >
         Get exclusive episodes, merch and more
       </Typography>
-      <Grid container columnSpacing={2} sx={{ px: "100px", mt: "100px" }}>
+      <Grid
+        container
+        columnSpacing={2}
+        sx={{ px: "100px", mt: "100px", position: "relative" }}
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: -90,
+            right: -10,
+            zIndex: -5,
+          }}
+        >
+          <Image height="200px" width="200px" src={Vector009} alt="bn" />
+        </Box>
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: -50,
+            left: 40,
+            zIndex: -5,
+          }}
+        >
+          <Image height="120px" width="120px" src={Vector013} alt="bn" />
+        </Box>
         {packageInfo.map((item, index) => {
           return (
             <Grid key={index} item xs={12} sm={4}>
@@ -120,7 +146,7 @@ const Sponsor = () => {
                 sx={{
                   border: "1.5px solid",
                   borderColor: item?.focusTag ? "#CD4631" : "#000",
-                  bgcolor: item?.focusTag && "#F7EDE8",
+                  bgcolor: item?.focusTag ? "#F7EDE8" : "#FFF",
                   width: "100%",
                   height: "360px",
                   padding: "40px",
@@ -209,8 +235,9 @@ const Sponsor = () => {
 
               <Box
                 sx={{
-                  border: "1.5px solid #CD4631",
-                  bgcolor: "#F7EDE8",
+                  border: "1.5px solid",
+                  borderColor: item?.focusTag ? "#CD4631" : "#000",
+                  bgcolor: item?.focusTag ? "#F7EDE8" : "#FFF",
                   marginTop: "20px",
                   width: "100%",
                   height: "300px",
