@@ -26,6 +26,41 @@ const PodcastTypes: NextPage<iProps> = ({ podcastCategories }) => {
     speed: 10000,
     autoplaySpeed: 0,
     cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          speed: 100,
+          infinite: true,
+          dots: true,
+          swipeToSlide: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          speed: 100,
+          autoplay: false,
+          dots: true,
+          swipeToSlide: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          speed: 100,
+          autoplay: false,
+          dots: true,
+          swipeToSlide: true,
+        },
+      },
+    ],
   };
 
   return (
@@ -90,83 +125,32 @@ const PodcastTypes: NextPage<iProps> = ({ podcastCategories }) => {
           })}
         </Slider>
       </Box>
-      {/* <Swiper
-        slidesPerView={4}
-        spaceBetween={150}
-        loop={true}
-        freeMode={true}
-        modules={[FreeMode, Autoplay]}
-        autoplay={{
-          delay: 0,
-          disableOnInteraction: false,
-        }}
-        speed={5000}
-      >
-        {podcastCategories?.map((podcast: any, index: number) => {
-          return (
-            <SwiperSlide key={index + 400}>
-              <Paper
-                sx={{
-                  height: "340px",
-                  width: "340px",
-                  backgroundImage: `url(${podcast.cover})`,
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "cover",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "end",
-                    gap: "10px",
-                    padding: "20px",
-                  }}
-                >
-                  <ComposedLink to={podcast.googlePodcastUrl}>
-                    <SiGooglepodcasts
-                      style={{ fontSize: "24px", color: "#fff" }}
-                    />
-                  </ComposedLink>
-                  <ComposedLink to={podcast.spotifyUrl}>
-                    <SiSpotify style={{ fontSize: "24px", color: "#fff" }} />
-                  </ComposedLink>
-                  <ComposedLink to={podcast.youtubeUrl}>
-                    <SiYoutube style={{ fontSize: "24px", color: "#fff" }} />
-                  </ComposedLink>
-                </Box>
-                <Typography
-                  sx={{
-                    fontSize: "36px",
-                    fontWeight: "bold",
-                    color: "primary.main",
-                    padding: "20px",
-                  }}
-                >
-                  {podcast.title}
-                </Typography>
-              </Paper>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper> */}
       <Box
         sx={{
-          mx: "140px",
+          mx: { xs: "40px", md: "140px" },
           my: "100px",
           borderTop: "1px solid black",
           borderBottom: "1px solid black",
-          height: "120px",
+          height: { md: "120px" },
+          py: { xs: "30px", md: 0 },
         }}
       >
-        <Grid container sx={{ height: 1 }}>
-          <Grid item xs={3} sx={{ display: "flex", alignItems: "center" }}>
+        <Grid container rowGap={2} sx={{ height: 1 }}>
+          <Grid
+            item
+            xs={12}
+            md={3}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <Typography
               sx={{
                 fontSize: "22.6px",
                 fontWeight: "bold",
+                textAlign: "center",
               }}
             >
               Supported by:
@@ -174,7 +158,8 @@ const PodcastTypes: NextPage<iProps> = ({ podcastCategories }) => {
           </Grid>
           <Grid
             item
-            xs={3}
+            xs={12}
+            md={3}
             sx={{
               display: "flex",
               justifyContent: "center",
@@ -190,7 +175,8 @@ const PodcastTypes: NextPage<iProps> = ({ podcastCategories }) => {
           </Grid>
           <Grid
             item
-            xs={3}
+            xs={12}
+            md={3}
             sx={{
               display: "flex",
               justifyContent: "center",
@@ -206,7 +192,8 @@ const PodcastTypes: NextPage<iProps> = ({ podcastCategories }) => {
           </Grid>
           <Grid
             item
-            xs={3}
+            xs={12}
+            md={3}
             sx={{
               display: "flex",
               justifyContent: "center",
