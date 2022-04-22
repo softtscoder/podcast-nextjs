@@ -32,7 +32,7 @@ const PodcastTypes: NextPage<iProps> = ({ podcastCategories }) => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          speed: 100,
+          speed: 300,
           infinite: true,
           dots: true,
           swipeToSlide: true,
@@ -43,7 +43,7 @@ const PodcastTypes: NextPage<iProps> = ({ podcastCategories }) => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          speed: 100,
+          speed: 300,
           autoplay: false,
           dots: true,
           swipeToSlide: true,
@@ -54,7 +54,7 @@ const PodcastTypes: NextPage<iProps> = ({ podcastCategories }) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          speed: 100,
+          speed: 300,
           autoplay: false,
           dots: true,
           swipeToSlide: true,

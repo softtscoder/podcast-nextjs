@@ -17,13 +17,49 @@ const Reviews = () => {
     speed: 1500,
     cssEase: "linear",
     swipeToSlide: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          speed: 300,
+          infinite: true,
+          dots: true,
+          swipeToSlide: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          speed: 300,
+          autoplay: false,
+          dots: true,
+          swipeToSlide: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          speed: 300,
+          autoplay: false,
+          dots: true,
+          swipeToSlide: true,
+        },
+      },
+    ],
   };
 
   return (
     <Box
       component="section"
       sx={{
-        padding: "140px",
+        py: "140px",
+        px: { xs: "20px", md: "140px" },
         bgcolor: "aliceBlue.main",
       }}
     >
@@ -36,7 +72,7 @@ const Reviews = () => {
         <Typography
           component="div"
           sx={{
-            fontSize: "60px",
+            fontSize: { xs: "30px", md: "60px" },
             fontWeight: "bold",
             position: "relative",
           }}
@@ -47,6 +83,7 @@ const Reviews = () => {
               textAlign: "center",
               left: -95,
               top: -60,
+              display: { xs: "none", md: "block" },
             }}
           >
             <Image height="100px" width="100px" src={Sparkle} alt="bn" />
@@ -56,7 +93,7 @@ const Reviews = () => {
       </Box>
       <Typography
         sx={{
-          fontSize: "23px",
+          fontSize: { xs: "18px", md: "23px" },
           fontWeight: "medium",
           textAlign: "center",
         }}
@@ -75,32 +112,32 @@ const Reviews = () => {
                   elevation={3}
                   sx={{
                     height: "310px",
-                    width: "520px",
-                    padding: "40px",
+                    width: { xs: "400px", md: "520px" },
+                    padding: { xs: "20px", md: "40px" },
                     display: "flex",
                     flexDirection: "column",
                   }}
                 >
                   <Typography
                     sx={{
-                      fontSize: "96px",
+                      fontSize: { xs: "65px", md: "95px" },
                       fontWeight: "bold",
                       color: "vermillion.main",
                       lineHeight: "0.7",
-                      marginBottom: "-20px",
+                      marginBottom: { md: "-20px" },
                     }}
                   >
                     {`"`}
                   </Typography>
                   <Typography
                     sx={{
-                      fontSize: "22.65px",
+                      fontSize: { xs: "19px", md: "22.65px" },
                       fontWeight: "medium",
                       flexGrow: 1,
                     }}
                   >
                     Lorem ipsum dolor sit amet consectet piscing elit, sed do
-                    eiusmod tempor incidi ut labore et dolore magna aliqua.{" "}
+                    eiusmod tempor incidi ut labore et dolore magna aliqua.
                   </Typography>
                   <Box
                     sx={{
