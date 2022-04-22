@@ -86,7 +86,7 @@ const Sponsor = () => {
           component="div"
           gutterBottom
           sx={{
-            fontSize: "60px",
+            fontSize: { xs: "35px", md: "60px" },
             fontWeight: "bold",
             textAlign: "center",
             position: "relative",
@@ -100,6 +100,7 @@ const Sponsor = () => {
               left: -35,
               top: -15,
               transform: "scaleX(-1)",
+              display: { xs: "none", md: "block" },
             }}
           >
             <Image height="60px" width="60px" src={Vector008} alt="bn" />
@@ -109,7 +110,7 @@ const Sponsor = () => {
       </Box>
       <Typography
         sx={{
-          fontSize: "22.65px",
+          fontSize: { xs: "17px", md: "22.65px" },
           fontWeight: "medium",
           textAlign: "center",
         }}
@@ -118,15 +119,20 @@ const Sponsor = () => {
       </Typography>
       <Grid
         container
-        columnSpacing={2}
-        sx={{ px: "100px", mt: "100px", position: "relative", width: 1 }}
+        sx={{
+          px: { xs: "20px", md: "100px" },
+          mt: { xs: "50px", md: "100px" },
+          position: "relative",
+          width: 1,
+        }}
       >
         <Box
           sx={{
             position: "absolute",
             top: -90,
-            right: -10,
+            right: 10,
             zIndex: -5,
+            display: { xs: "none", md: "block" },
           }}
         >
           <Image height="200px" width="200px" src={Vector009} alt="bn" />
@@ -137,19 +143,20 @@ const Sponsor = () => {
             bottom: -50,
             left: 40,
             zIndex: -5,
+            display: { xs: "none", md: "block" },
           }}
         >
           <Image height="120px" width="120px" src={Vector013} alt="bn" />
         </Box>
         {packageInfo.map((item, index) => {
           return (
-            <Grid key={index} item xs={12} sm={4}>
+            <Grid key={index} item xs={12} sm={4} sx={{ p: "10px" }}>
               <Box
                 sx={{
                   border: "1.5px solid",
                   borderColor: item?.focusTag ? "#CD4631" : "#000",
                   bgcolor: item?.focusTag ? "#F7EDE8" : "#FFF",
-                  width: "100%",
+                  width: 1,
                   height: "360px",
                   padding: "40px",
                   display: "flex",
