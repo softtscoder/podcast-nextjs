@@ -20,7 +20,7 @@ const RecentEpisodes = () => {
         component="h2"
         gutterBottom
         sx={{
-          fontSize: "60px",
+          fontSize: { xs: "40px", md: "60px" },
           fontWeight: "bold",
           textAlign: "center",
         }}
@@ -29,14 +29,18 @@ const RecentEpisodes = () => {
       </Typography>
       <Typography
         sx={{
-          fontSize: "22.65px",
+          fontSize: { xs: "18px", md: "22.65px" },
           fontWeight: "medium",
           textAlign: "center",
         }}
       >
         Available on your favorite platform
       </Typography>
-      <Grid container spacing={3} sx={{ mt: "60px", px: "120px" }}>
+      <Grid
+        container
+        spacing={3}
+        sx={{ mt: "60px", px: { xs: "20px", md: "120px" } }}
+      >
         <Box sx={{ position: "relative", width: 1 }}>
           <Box
             sx={{
@@ -44,6 +48,7 @@ const RecentEpisodes = () => {
               textAlign: "center",
               right: -70,
               top: -60,
+              display: { xs: "none", md: "block" },
             }}
           >
             <Image height="125px" width="125px" src={Vector008} alt="bn" />
@@ -51,10 +56,10 @@ const RecentEpisodes = () => {
         </Box>
         {[1, 2, 3, 4, 5, 6].map((item, index) => {
           return (
-            <Grid key={index} item xs={6}>
+            <Grid key={index} item xs={12} md={6}>
               <Paper
                 sx={{
-                  height: "250px",
+                  height: { xs: "auto", md: "250px" },
                   padding: "20px",
                   border: "2px solid #000000",
                   boxShadow: "10px 10px 0px #81ADC8",
@@ -73,8 +78,8 @@ const RecentEpisodes = () => {
                       justifyContent: "end",
                       gap: "10px",
                       padding: "5px 10px",
-                      height: "170px",
-                      width: "170px",
+                      height: { xs: "130px", md: "170px" },
+                      width: 1,
                       backgroundImage: `url("https://i.ibb.co/TgHFqFs/microphone-for-audio-record-or-podcast-concept-single-microphone-on-dark-shadow-background-with-copy.jpg")`,
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
@@ -98,7 +103,7 @@ const RecentEpisodes = () => {
                     xs={7.8}
                     sx={{
                       paddingLeft: "20px",
-                      paddingTop: "15px",
+                      paddingTop: { md: "15px" },
                     }}
                   >
                     <ComposedLink
@@ -112,7 +117,7 @@ const RecentEpisodes = () => {
                       <Typography
                         gutterBottom
                         sx={{
-                          fontSize: "16px",
+                          fontSize: { xs: "12px", md: "16px" },
                           fontWeight: "bold",
                         }}
                       >
@@ -121,18 +126,18 @@ const RecentEpisodes = () => {
                       <Typography
                         gutterBottom
                         sx={{
-                          fontSize: "22.65px",
+                          fontSize: { xs: "17px", md: "22.65px" },
                           fontWeight: "bold",
-                          lineHeight: "1.2",
+                          lineHeight: { xs: "0.9", md: "1.2" },
                         }}
                       >
                         Pandemic Becoming Endemic
                       </Typography>
                     </ComposedLink>
-                    <Divider sx={{ mb: "8px" }} />
+                    <Divider sx={{ mb: { md: "8px" } }} />
                     <Typography
                       sx={{
-                        fontSize: "14px",
+                        fontSize: { xs: "13px", md: "14px" },
                         fontWeight: "medium",
                       }}
                     >
@@ -155,13 +160,13 @@ const RecentEpisodes = () => {
                         <Typography
                           key={item}
                           sx={{
-                            fontSize: "12px",
+                            fontSize: { xs: "10px", md: "12px" },
                             fontWeight: "medium",
                             border: "1px solid",
                             borderColor: "davysGrey.main",
                             color: "davysGrey.main",
                             borderRadius: "4px",
-                            padding: "6px 12px",
+                            padding: { xs: "3px 6px", md: "6px 12px" },
                           }}
                         >
                           {item}
@@ -177,7 +182,7 @@ const RecentEpisodes = () => {
                   >
                     <Typography
                       sx={{
-                        fontSize: "12px",
+                        fontSize: { xs: "10px", md: "12px" },
                         fontWeight: "bold",
                         marginRight: "10px",
                       }}
@@ -189,8 +194,8 @@ const RecentEpisodes = () => {
                         <Avatar
                           key={item}
                           sx={{
-                            width: "25px",
-                            height: "25px",
+                            width: { xs: "18px", md: "25px" },
+                            height: { xs: "18px", md: "25px" },
                             marginRight: "-10px",
                           }}
                         />
@@ -207,7 +212,7 @@ const RecentEpisodes = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          marginTop: "100px",
+          marginTop: { xs: "50px", md: "100px" },
         }}
       >
         <ShadowButton
