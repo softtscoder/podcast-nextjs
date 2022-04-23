@@ -1,11 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import prisma from "@utils/prisma";
-import { PodcastCategory } from "@prisma/client";
+import { Podcast, PodcastCategory } from "@prisma/client";
+
+interface PodcastCategoryData extends PodcastCategory {
+  podcasts?: Podcast[];
+}
 
 interface iResponse {
   success?: boolean;
   message?: string;
-  data?: PodcastCategory | null;
+  data?: PodcastCategoryData | null;
 }
 
 export default async function handle(
@@ -33,8 +37,19 @@ export default async function handle(
             id: Number(categoryId),
           },
         });
+      const podcast: Podcast[] = await prisma.podcast.findMany({
+        where: {
+          categoryId: Number(categoryId),
+        },
+      });
       if (category) {
-        res.json({ success: true, data: category });
+        res.status(200).json({
+          success: true,
+          data: {
+            ...category,
+            podcasts: podcast,
+          },
+        });
       } else {
         res.status(400).json({
           success: false,
