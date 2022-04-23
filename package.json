@@ -20,7 +20,6 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "5.6.1",
     "@mui/material": "5.6.1",
-    "@prisma/client": "^3.12.0",
     "@types/react-slick": "^0.23.8",
     "next": "12.1.5",
     "react": "18.0.0",
@@ -32,7 +31,6 @@
   "devDependencies": {
     "@types/node": "17.0.24",
     "@types/react": "18.0.5",
-    "prisma": "^3.12.0",
     "eslint": "^8.13.0",
     "eslint-config-next": "^12.1.5",
     "eslint-config-prettier": "^8.5.0",

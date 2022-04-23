@@ -5,18 +5,61 @@ import { Box, Grid, Paper, Typography } from "@mui/material";
 import Slider from "react-slick";
 import ComposedLink from "@components/Custom/ComposedLink";
 import { SiGooglepodcasts, SiSpotify, SiYoutube } from "react-icons/si";
-import { PodcastCategory } from "@prisma/client";
 import GooglePodcast from "@images/BrandIcons/GooglePodcast.png";
 import Spotify from "@images/BrandIcons/Spotify.png";
 import Youtube from "@images/BrandIcons/Youtube.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-type iProps = {
-  podcastCategories: PodcastCategory[];
-};
+const categoryData = [
+  {
+    title: "Test Category",
+    cover:
+      "https://i.ibb.co/TgHFqFs/microphone-for-audio-record-or-podcast-concept-single-microphone-on-dark-shadow-background-with-copy.jpg",
+    googlePodcastUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+    spotifyUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+    youtubeUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+  },
+  {
+    title: "Test Category",
+    cover: "https://i.ibb.co/QbKrZqZ/besustainable-podcast-bg.jpg",
+    googlePodcastUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+    spotifyUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+    youtubeUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+  },
+  {
+    title: "Test Category",
+    cover:
+      "https://i.ibb.co/TgHFqFs/microphone-for-audio-record-or-podcast-concept-single-microphone-on-dark-shadow-background-with-copy.jpg",
+    googlePodcastUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+    spotifyUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+    youtubeUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+  },
+  {
+    title: "Test Category",
+    cover: "https://i.ibb.co/QbKrZqZ/besustainable-podcast-bg.jpg",
+    googlePodcastUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+    spotifyUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+    youtubeUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+  },
+  {
+    title: "Test Category",
+    cover:
+      "https://i.ibb.co/TgHFqFs/microphone-for-audio-record-or-podcast-concept-single-microphone-on-dark-shadow-background-with-copy.jpg",
+    googlePodcastUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+    spotifyUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+    youtubeUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+  },
+  {
+    title: "Test Category",
+    cover: "https://i.ibb.co/QbKrZqZ/besustainable-podcast-bg.jpg",
+    googlePodcastUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+    spotifyUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+    youtubeUrl: "https://i.ibb.co/cwYT56L/pngegg.png",
+  },
+];
 
-const PodcastTypes: NextPage<iProps> = ({ podcastCategories }) => {
+const PodcastTypes: NextPage = () => {
   const settings = {
     infinite: true,
     slidesToShow: 3.5,
@@ -73,7 +116,7 @@ const PodcastTypes: NextPage<iProps> = ({ podcastCategories }) => {
     >
       <Box sx={{ mx: 5 }}>
         <Slider {...settings}>
-          {podcastCategories?.map((podcast: any, index: number) => {
+          {categoryData?.map((podcast: any, index: number) => {
             return (
               <Box key={index}>
                 <Paper
@@ -97,17 +140,27 @@ const PodcastTypes: NextPage<iProps> = ({ podcastCategories }) => {
                       padding: "20px",
                     }}
                   >
-                    <ComposedLink to={podcast.googlePodcastUrl}>
-                      <SiGooglepodcasts
-                        style={{ fontSize: "24px", color: "#fff" }}
-                      />
-                    </ComposedLink>
-                    <ComposedLink to={podcast.spotifyUrl}>
-                      <SiSpotify style={{ fontSize: "24px", color: "#fff" }} />
-                    </ComposedLink>
-                    <ComposedLink to={podcast.youtubeUrl}>
-                      <SiYoutube style={{ fontSize: "24px", color: "#fff" }} />
-                    </ComposedLink>
+                    {podcast?.googlePodcast && (
+                      <ComposedLink to={podcast.googlePodcastUrl}>
+                        <SiGooglepodcasts
+                          style={{ fontSize: "24px", color: "#fff" }}
+                        />
+                      </ComposedLink>
+                    )}
+                    {podcast?.spotifyUrl && (
+                      <ComposedLink to={podcast.spotifyUrl}>
+                        <SiSpotify
+                          style={{ fontSize: "24px", color: "#fff" }}
+                        />
+                      </ComposedLink>
+                    )}
+                    {podcast?.youtubeUrl && (
+                      <ComposedLink to={podcast.youtubeUrl}>
+                        <SiYoutube
+                          style={{ fontSize: "24px", color: "#fff" }}
+                        />
+                      </ComposedLink>
+                    )}
                   </Box>
                   <Typography
                     sx={{

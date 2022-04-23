@@ -1,7 +1,5 @@
 import * as React from "react";
 import type { GetStaticProps, NextPage } from "next";
-import { PodcastCategory } from "@prisma/client";
-import prisma from "@utils/prisma";
 import Scribble from "@components/Custom/Scribble";
 import ScribbleRed from "@components/Custom/ScribbleRed";
 import Banner from "@components/Home/Banner";
@@ -15,10 +13,8 @@ import ArticleNews from "@components/Home/ArticleNews";
 import DownloadApp from "@components/Home/DownloadApp";
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const response: PodcastCategory[] = await prisma.podcastCategory.findMany();
-  const podcastCategories = JSON.parse(JSON.stringify(response));
   return {
-    props: { podcastCategories }, // will be passed to the page component as props
+    props: {}, // will be passed to the page component as props
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
@@ -26,18 +22,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-type iProps = {
-  podcastCategories: PodcastCategory[];
-};
-
-const Home: NextPage<iProps> = ({ podcastCategories }) => {
+const Home: NextPage = () => {
   return (
     <React.Fragment>
       {/* banner */}
       <Banner />
 
       {/* podcast types */}
-      <PodcastTypes podcastCategories={podcastCategories} />
+      <PodcastTypes />
 
       <ScribbleRed />
 
