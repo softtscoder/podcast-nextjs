@@ -19,6 +19,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const podcastCategories = JSON.parse(JSON.stringify(response));
   return {
     props: { podcastCategories }, // will be passed to the page component as props
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 1000, // In seconds
   };
 };
 
