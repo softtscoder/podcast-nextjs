@@ -62,11 +62,13 @@ const RecentEpisodes = () => {
                   height: { xs: "auto", md: "250px" },
                   padding: "20px",
                   border: "2px solid #000000",
-                  boxShadow: "10px 10px 0px #81ADC8",
                   borderRadius: "12px",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
+                  "&:hover": {
+                    boxShadow: "10px 10px 0px #81ADC8",
+                  },
                 }}
               >
                 <Grid container>
