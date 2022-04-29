@@ -40,7 +40,7 @@ const ArticleNews = () => {
         variant="h2"
         gutterBottom
         sx={{
-          fontSize: { xs: "40px", md: "60px" },
+          fontSize: { xs: "20px", md: "60px" },
           fontWeight: "bold",
           textAlign: "center",
         }}
@@ -49,7 +49,7 @@ const ArticleNews = () => {
       </Typography>
       <Typography
         sx={{
-          fontSize: { xs: "18px", md: "22.65px" },
+          fontSize: { xs: "16px", md: "22.65px" },
           fontWeight: "medium",
           textAlign: "center",
           color: "davysGrey.main",
@@ -60,8 +60,8 @@ const ArticleNews = () => {
       <Grid
         container
         sx={{
-          mt: { xs: "30px", md: "60px" },
-          px: { xs: "20px", md: "140px" },
+          mt: { xs: "20px", md: "60px" },
+          px: { xs: "10px", md: "140px" },
           position: "relative",
           width: 1,
         }}
@@ -122,7 +122,7 @@ const ArticleNews = () => {
                 />
                 <Typography
                   sx={{
-                    fontSize: { xs: "12px", md: "14px" },
+                    fontSize: { xs: "10px", md: "14px" },
                     fontWeight: "bold",
                     color: "davysGrey.main",
                     marginTop: "40px",
@@ -133,7 +133,7 @@ const ArticleNews = () => {
                 <Typography
                   gutterBottom
                   sx={{
-                    fontSize: { xs: "25px", md: "36.65px" },
+                    fontSize: { xs: "20px", md: "36.65px" },
                     fontWeight: "bold",
                     "&:hover": {
                       color: "vermillion.main",
@@ -144,7 +144,7 @@ const ArticleNews = () => {
                 </Typography>
                 <Typography
                   sx={{
-                    fontSize: { xs: "12px", md: "14px" },
+                    fontSize: { xs: "11px", md: "14px" },
                     fontWeight: "medium",
                     color: "davysGrey.main",
                   }}
@@ -183,7 +183,7 @@ const ArticleNews = () => {
                   </Box>
                   <Typography
                     sx={{
-                      fontSize: { xs: "9px", md: "12px" },
+                      fontSize: { xs: "8px", md: "12px" },
                       fontWeight: "bold",
                     }}
                   >
@@ -205,7 +205,7 @@ const ArticleNews = () => {
         <ShadowButton
           sx={{
             width: "170px",
-            height: "60px",
+            height: { xs: "40px", md: "60px" },
           }}
         >
           BROWSE ALL

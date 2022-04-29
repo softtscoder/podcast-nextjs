@@ -77,7 +77,7 @@ const Banner = () => {
       </Typography>
       <ShadowButton
         sx={{
-          height: { xs: "50px", md: "65px" },
+          height: { xs: "40px", md: "65px" },
           width: "180px",
           mt: { xs: 0, md: "60px" },
         }}

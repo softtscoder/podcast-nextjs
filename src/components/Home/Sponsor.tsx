@@ -86,7 +86,7 @@ const Sponsor = () => {
           component="div"
           gutterBottom
           sx={{
-            fontSize: { xs: "40px", md: "60px" },
+            fontSize: { xs: "20px", md: "60px" },
             fontWeight: "bold",
             textAlign: "center",
             position: "relative",
@@ -110,7 +110,7 @@ const Sponsor = () => {
       </Box>
       <Typography
         sx={{
-          fontSize: { xs: "17px", md: "22.65px" },
+          fontSize: { xs: "16px", md: "22.65px" },
           fontWeight: "medium",
           textAlign: "center",
         }}
@@ -120,8 +120,8 @@ const Sponsor = () => {
       <Grid
         container
         sx={{
-          px: { xs: "20px", md: "100px" },
-          mt: { xs: "50px", md: "100px" },
+          px: { xs: "10px", md: "100px" },
+          mt: { xs: "20px", md: "100px" },
           position: "relative",
           width: 1,
         }}
@@ -157,8 +157,8 @@ const Sponsor = () => {
                   borderColor: item?.focusTag ? "#CD4631" : "#000",
                   bgcolor: item?.focusTag ? "#F7EDE8" : "#FFF",
                   width: 1,
-                  height: "360px",
-                  padding: "40px",
+                  height: { md: "360px" },
+                  padding: { xs: "20px", md: "40px" },
                   display: "flex",
                   flexDirection: "column",
                   borderRadius: "8px",
@@ -174,7 +174,7 @@ const Sponsor = () => {
                   <Typography
                     gutterBottom
                     sx={{
-                      fontSize: "36.65px",
+                      fontSize: { xs: "20px", md: "36.65px" },
                       fontWeight: "bold",
                     }}
                   >
@@ -197,7 +197,7 @@ const Sponsor = () => {
                 </Box>
                 <Typography
                   sx={{
-                    fontSize: "14px",
+                    fontSize: { xs: "12px", md: "14px" },
                     fontWeight: "medium",
                     flexGrow: 1,
                   }}
@@ -210,12 +210,13 @@ const Sponsor = () => {
                   sx={{
                     display: "flex",
                     justifyContent: "space-between",
+                    marginTop: "20px",
                   }}
                 >
                   <ShadowButton
                     sx={{
                       width: "160px",
-                      height: { xs: "50px", md: "60px" },
+                      height: { xs: "40px", md: "60px" },
                     }}
                   >
                     {item?.buttonText}
@@ -223,7 +224,7 @@ const Sponsor = () => {
                   <Box>
                     <Typography
                       sx={{
-                        fontSize: "22.65px",
+                        fontSize: { xs: "18px", md: "22.65px" },
                         fontWeight: "bold",
                         color: "vermillion.main",
                       }}
@@ -232,7 +233,7 @@ const Sponsor = () => {
                     </Typography>
                     <Typography
                       sx={{
-                        fontSize: "14px",
+                        fontSize: { xs: "12px", md: "14px" },
                         fontWeight: "bold",
                       }}
                     >
@@ -249,8 +250,8 @@ const Sponsor = () => {
                   bgcolor: item?.focusTag ? "#F7EDE8" : "#FFF",
                   marginTop: "20px",
                   width: "100%",
-                  height: "300px",
-                  padding: "40px",
+                  height: { md: "300px" },
+                  padding: { xs: "20px", md: "40px" },
                   display: "flex",
                   flexDirection: "column",
                   borderRadius: "8px",
@@ -258,13 +259,13 @@ const Sponsor = () => {
               >
                 <Typography
                   sx={{
-                    fontSize: "14px",
+                    fontSize: { xs: "12px", md: "14px" },
                     fontWeight: "bold",
                   }}
                 >
                   What’s included:
                 </Typography>
-                <List sx={{ mt: "10px" }}>
+                <List sx={{ mt: { md: "10px" } }}>
                   {index > 0 && (
                     <ListItem key={index} sx={{ padding: 0 }}>
                       <ListItemIcon sx={{ minWidth: "10px" }}>

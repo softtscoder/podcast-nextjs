@@ -32,7 +32,7 @@ const Footer = () => {
       <Grid
         container
         sx={{
-          pb: "60px",
+          pb: { xs: "20px", md: "60px" },
           borderBottom: "0.5px solid",
           borderColor: "davysGrey.main",
         }}
@@ -43,14 +43,18 @@ const Footer = () => {
               <Image width="74px" height="74px" src={Logo} alt="Brand-logo" />
             </Box>
             <Typography
-              sx={{ fontSize: "12px", fontWeight: "medium", pb: "10px" }}
+              sx={{
+                fontSize: { xs: "10px", md: "12px" },
+                fontWeight: "medium",
+                pb: "10px",
+              }}
             >
               ©2021.
             </Typography>
           </Box>
           <Typography
             sx={{
-              fontSize: "14px",
+              fontSize: { xs: "12px", md: "14px" },
               fontWeight: "medium",
               my: { xs: "10px", md: "40px" },
             }}
@@ -70,15 +74,14 @@ const Footer = () => {
                 <Grid
                   key={`footerNav-${index}`}
                   item
-                  xs={12}
-                  md={5}
-                  sx={{ mb: "20px" }}
+                  xs={5}
+                  sx={{ mb: { xs: "5px", md: "20px" } }}
                 >
                   <Typography
                     component={ComposedLink}
                     to={link.to}
                     sx={{
-                      fontSize: "16px",
+                      fontSize: { xs: "14px", md: "16px" },
                       fontWeight: "medium",
                       color: "black.main",
                       "&:hover": {
@@ -94,7 +97,9 @@ const Footer = () => {
           </Grid>
         </Grid>
         <Grid item xs={12} md={4} sx={{ padding: "10px" }}>
-          <Typography sx={{ fontSize: "16px", fontWeight: "medium" }}>
+          <Typography
+            sx={{ fontSize: { xs: "14px", md: "16px" }, fontWeight: "medium" }}
+          >
             Listen to episodes on your fav platform:
           </Typography>
           <Box
@@ -124,7 +129,11 @@ const Footer = () => {
             />
           </Box>
           <Typography
-            sx={{ fontSize: "16px", fontWeight: "medium", mt: "60px" }}
+            sx={{
+              fontSize: { xs: "14px", md: "16px" },
+              fontWeight: "medium",
+              mt: { xs: "20px", md: "60px" },
+            }}
           >
             App available on:
           </Typography>
@@ -157,17 +166,19 @@ const Footer = () => {
         <Box
           sx={{
             display: "flex",
-            alignItems: "center",
+            alignItems: { md: "center" },
             gap: "10px",
             flexDirection: { xs: "column", md: "row" },
           }}
         >
-          <Typography sx={{ fontSize: "12px", fontWeight: "medium" }}>
+          <Typography
+            sx={{ fontSize: { xs: "10px", md: "12px" }, fontWeight: "medium" }}
+          >
             ©2022. All Rights Reserved.
           </Typography>
           <Typography
             sx={{
-              fontSize: "12px",
+              fontSize: { xs: "10px", md: "12px" },
               fontWeight: "medium",
               color: "vermillion.main",
             }}
@@ -176,11 +187,15 @@ const Footer = () => {
           </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <Typography sx={{ fontSize: "12px", fontWeight: "medium" }}>
+          <Typography
+            sx={{ fontSize: { xs: "10px", md: "12px" }, fontWeight: "medium" }}
+          >
             Terms
           </Typography>
           <CircleIcon sx={{ width: "5px" }} />
-          <Typography sx={{ fontSize: "12px", fontWeight: "medium" }}>
+          <Typography
+            sx={{ fontSize: { xs: "10px", md: "12px" }, fontWeight: "medium" }}
+          >
             Privacy
           </Typography>
         </Box>

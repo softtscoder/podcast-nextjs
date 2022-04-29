@@ -17,6 +17,7 @@ const Reviews = () => {
     speed: 1500,
     cssEase: "linear",
     swipeToSlide: false,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -72,7 +73,7 @@ const Reviews = () => {
         <Typography
           component="div"
           sx={{
-            fontSize: { xs: "30px", md: "60px" },
+            fontSize: { xs: "20px", md: "60px" },
             fontWeight: "bold",
             position: "relative",
           }}
@@ -93,34 +94,35 @@ const Reviews = () => {
       </Box>
       <Typography
         sx={{
-          fontSize: { xs: "18px", md: "23px" },
+          fontSize: { xs: "16px", md: "23px" },
           fontWeight: "medium",
           textAlign: "center",
         }}
       >
         Their experience throughout every platform
       </Typography>
-      <Box sx={{ mt: "100px" }}>
+      <Box sx={{ mt: { xs: "50px", md: "100px" } }}>
         <Slider
           ref={(slider: any) => (customSlider.current = slider)}
           {...settings}
         >
           {[1, 2, 3, 4].map((item: any, index: number) => {
             return (
-              <Box key={index}>
+              <Box key={index} sx={{ mx: "2vw" }}>
                 <Paper
                   elevation={3}
                   sx={{
-                    height: "310px",
-                    width: { xs: "400px", md: "520px" },
+                    height: { md: "310px" },
+                    width: { xs: "85vw", md: "520px" },
                     padding: { xs: "20px", md: "40px" },
                     display: "flex",
                     flexDirection: "column",
+                    borderRadius: "10px",
                   }}
                 >
                   <Typography
                     sx={{
-                      fontSize: { xs: "65px", md: "95px" },
+                      fontSize: { xs: "45px", md: "95px" },
                       fontWeight: "bold",
                       color: "vermillion.main",
                       lineHeight: "0.7",
@@ -131,7 +133,7 @@ const Reviews = () => {
                   </Typography>
                   <Typography
                     sx={{
-                      fontSize: { xs: "19px", md: "22.65px" },
+                      fontSize: { xs: "16px", md: "22.65px" },
                       fontWeight: "medium",
                       flexGrow: 1,
                     }}

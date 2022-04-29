@@ -20,7 +20,7 @@ const RecentEpisodes = () => {
         component="h2"
         gutterBottom
         sx={{
-          fontSize: { xs: "40px", md: "60px" },
+          fontSize: { xs: "20px", md: "60px" },
           fontWeight: "bold",
           textAlign: "center",
         }}
@@ -29,7 +29,7 @@ const RecentEpisodes = () => {
       </Typography>
       <Typography
         sx={{
-          fontSize: { xs: "18px", md: "22.65px" },
+          fontSize: { xs: "16px", md: "22.65px" },
           fontWeight: "medium",
           textAlign: "center",
         }}
@@ -39,7 +39,7 @@ const RecentEpisodes = () => {
       <Grid
         container
         spacing={3}
-        sx={{ mt: "60px", px: { xs: "20px", md: "120px" } }}
+        sx={{ mt: { xs: "30px", md: "60px" }, px: { xs: "10px", md: "120px" } }}
       >
         <Box sx={{ position: "relative", width: 1 }}>
           <Box
@@ -59,7 +59,7 @@ const RecentEpisodes = () => {
             <Grid key={index} item xs={12} md={6}>
               <Paper
                 sx={{
-                  height: { xs: "auto", md: "250px" },
+                  height: { md: "250px" },
                   padding: "20px",
                   border: "2px solid #000000",
                   borderRadius: "12px",
@@ -119,7 +119,7 @@ const RecentEpisodes = () => {
                       <Typography
                         gutterBottom
                         sx={{
-                          fontSize: { xs: "12px", md: "16px" },
+                          fontSize: { xs: "10px", md: "16px" },
                           fontWeight: "bold",
                         }}
                       >
@@ -128,7 +128,7 @@ const RecentEpisodes = () => {
                       <Typography
                         gutterBottom
                         sx={{
-                          fontSize: { xs: "17px", md: "22.65px" },
+                          fontSize: { xs: "16px", md: "22.65px" },
                           fontWeight: "bold",
                           lineHeight: { xs: "0.9", md: "1.2" },
                         }}
@@ -136,10 +136,12 @@ const RecentEpisodes = () => {
                         Pandemic Becoming Endemic
                       </Typography>
                     </ComposedLink>
-                    <Divider sx={{ mb: { md: "8px" } }} />
+                    <Divider
+                      sx={{ mb: { md: "8px" }, my: { xs: "8px", md: 0 } }}
+                    />
                     <Typography
                       sx={{
-                        fontSize: { xs: "13px", md: "14px" },
+                        fontSize: { xs: "11px", md: "14px" },
                         fontWeight: "medium",
                       }}
                     >
@@ -219,7 +221,7 @@ const RecentEpisodes = () => {
       >
         <ShadowButton
           sx={{
-            height: "60px",
+            height: { xs: "40px", md: "60px" },
             width: "250px",
           }}
         >

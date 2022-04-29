@@ -91,11 +91,11 @@ const Benefits = () => {
         <Typography
           component="div"
           sx={{
-            fontSize: { xs: "40px", md: "60px" },
+            fontSize: { xs: "20px", md: "60px" },
             fontWeight: "bold",
             textAlign: "center",
             position: "relative",
-            marginTop: "40px",
+            marginTop: { md: "40px" },
           }}
         >
           <Box
@@ -115,7 +115,7 @@ const Benefits = () => {
       </Box>
       <Typography
         sx={{
-          fontSize: { xs: "18px", md: "22.65px" },
+          fontSize: { xs: "16px", md: "22.65px" },
           fontWeight: "medium",
           textAlign: "center",
           mb: "100px",
@@ -129,7 +129,7 @@ const Benefits = () => {
             <Grid item xs={12} md={4} key={index}>
               <Box
                 sx={{
-                  height: "100px",
+                  height: { md: "100px" },
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -145,7 +145,7 @@ const Benefits = () => {
               </Box>
               <Typography
                 sx={{
-                  fontSize: "22.65px",
+                  fontSize: { xs: "18px", md: "22.65px" },
                   fontWeight: "bold",
                   textAlign: "center",
                   pb: 1,
@@ -155,7 +155,7 @@ const Benefits = () => {
               </Typography>
               <Typography
                 sx={{
-                  fontSize: "16px",
+                  fontSize: { xs: "14px", md: "16px" },
                   fontWeight: "medium",
                   textAlign: "center",
                 }}
@@ -175,7 +175,7 @@ const Benefits = () => {
       >
         <ShadowButton
           sx={{
-            height: "60px",
+            height: { xs: "40px", md: "60px" },
             width: "170px",
           }}
         >

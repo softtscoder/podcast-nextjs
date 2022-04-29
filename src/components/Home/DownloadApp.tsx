@@ -64,17 +64,17 @@ const DownloadApp = () => {
         </Typography>
         <Typography
           sx={{
-            fontSize: { xs: "40px", md: "60px" },
+            fontSize: { xs: "20px", md: "60px" },
             fontWeight: "bold",
             marginTop: "20px",
-            marginBottom: "-20px",
+            marginBottom: { md: "-20px" },
           }}
         >
           Available now
         </Typography>
         <Typography
           sx={{
-            fontSize: { xs: "40px", md: "60px" },
+            fontSize: { xs: "30px", md: "60px" },
             fontWeight: "bold",
           }}
         >
@@ -82,10 +82,10 @@ const DownloadApp = () => {
         </Typography>
         <Typography
           sx={{
-            fontSize: { xs: "18px", md: "22.65px" },
+            fontSize: { xs: "16px", md: "22.65px" },
             fontWeight: "medium",
             color: "davysGrey.main",
-            marginTop: "28px",
+            marginTop: { xs: "10px", md: "28px" },
           }}
         >
           We just launched our podcast app!
@@ -93,8 +93,8 @@ const DownloadApp = () => {
         <ShadowButton
           sx={{
             width: "210px",
-            height: "60px",
-            marginTop: { xs: "50px", md: "140px" },
+            height: { xs: "40px", md: "60px" },
+            marginTop: { xs: "40px", md: "140px" },
             position: "relative",
           }}
         >
@@ -113,7 +113,7 @@ const DownloadApp = () => {
         </ShadowButton>
         <Typography
           sx={{
-            fontSize: { xs: "12px", md: "14px" },
+            fontSize: { xs: "10px", md: "14px" },
             fontWeight: "medium",
             marginTop: "24px",
           }}
