@@ -20,34 +20,11 @@ const Reviews = () => {
     arrows: false,
     responsive: [
       {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          speed: 300,
-          infinite: true,
-          dots: true,
-          swipeToSlide: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          speed: 300,
-          autoplay: false,
-          dots: true,
-          swipeToSlide: true,
-        },
-      },
-      {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          speed: 300,
-          autoplay: false,
+          speed: 1000,
           dots: true,
           swipeToSlide: true,
         },
@@ -108,7 +85,7 @@ const Reviews = () => {
         >
           {[1, 2, 3, 4].map((item: any, index: number) => {
             return (
-              <Box key={index} sx={{ mx: "2vw" }}>
+              <Box key={index} sx={{ m: { xs: "2vw", md: "5px" } }}>
                 <Paper
                   elevation={3}
                   sx={{
