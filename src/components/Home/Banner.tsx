@@ -44,9 +44,9 @@ const Banner = () => {
         variant="h1"
         component="h1"
         sx={{
-          fontSize: { xs: "50px", md: "90px" },
+          fontSize: { xs: "40px", md: "90px" },
           fontWeight: "bold",
-          mt: "60px",
+          mt: { xs: "20px", md: "60px" },
           textAlign: "center",
         }}
       >
@@ -56,7 +56,7 @@ const Banner = () => {
         variant="h1"
         component="h1"
         sx={{
-          fontSize: { xs: "50px", md: "90px" },
+          fontSize: { xs: "40px", md: "90px" },
           fontWeight: "bold",
           lineHeight: "0.7",
           color: "vermillion.main",
@@ -67,16 +67,20 @@ const Banner = () => {
       </Typography>
       <Typography
         sx={{
-          fontSize: "16px",
+          fontSize: { xs: "14px", md: "16px" },
           fontWeight: "medium",
-          my: "40px",
+          my: { xs: "20px", md: "40px" },
           textAlign: "center",
         }}
       >
         We cover all kinds of categories and <br /> a weekly special guest.
       </Typography>
       <ShadowButton
-        sx={{ height: "65px", width: "180px", mt: { xs: 0, md: "60px" } }}
+        sx={{
+          height: { xs: "50px", md: "65px" },
+          width: "180px",
+          mt: { xs: 0, md: "60px" },
+        }}
       >
         SUBSCRIBE
       </ShadowButton>

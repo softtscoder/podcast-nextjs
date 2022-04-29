@@ -17,7 +17,7 @@ const Promotional = () => {
     >
       <Typography
         sx={{
-          fontSize: { xs: "30px", md: "60px" },
+          fontSize: { xs: "20px", md: "60px" },
           fontWeight: "bold",
           textAlign: "center",
           my: "60px",
@@ -26,7 +26,7 @@ const Promotional = () => {
         Talk. Listen. Get inspired <br /> by every minute of it.
       </Typography>
       <Grid container>
-        <Grid item xs={12} md={6} sx={{ padding: 12 }}>
+        <Grid item xs={12} md={6} sx={{ padding: { xs: 4, md: 12 } }}>
           <Box
             sx={{
               display: "flex",
@@ -47,7 +47,7 @@ const Promotional = () => {
             ac ultrices odio.
           </Typography>
         </Grid>
-        <Grid item xs={12} md={6} sx={{ padding: 12 }}>
+        <Grid item xs={12} md={6} sx={{ padding: { xs: 4, md: 12 } }}>
           <Box
             sx={{
               display: "flex",
@@ -73,7 +73,7 @@ const Promotional = () => {
         sx={{
           position: "relative",
           textAlign: "center",
-          padding: { xs: "20px", md: "40px" },
+          padding: { xs: "10px", md: "40px" },
           bgcolor: "champagne.main",
           mx: { xs: "20px", md: "140px" },
           marginBottom: "80px",
@@ -91,17 +91,17 @@ const Promotional = () => {
         </Box>
         <Typography
           sx={{
-            fontSize: { xs: "65px", md: "95px" },
+            fontSize: { xs: "45px", md: "95px" },
             fontWeight: "bold",
             color: "vermillion.main",
-            lineHeight: "0.5",
+            lineHeight: { xs: "1", md: "0.5" },
           }}
         >
           {`"`}
         </Typography>
         <Typography
           sx={{
-            fontSize: { xs: "22px", md: "36px" },
+            fontSize: { xs: "18px", md: "36px" },
             fontWeight: "bold",
           }}
         >
@@ -112,7 +112,6 @@ const Promotional = () => {
           sx={{
             mt: "40px",
             display: "flex",
-            flexDirection: { xs: "column", md: "row" },
             justifyContent: "center",
             alignItems: "center",
             gap: "10px",
@@ -125,7 +124,7 @@ const Promotional = () => {
           />
           <Typography
             sx={{
-              fontSize: "14px",
+              fontSize: { xs: "10px", md: "14px" },
               fontWeight: "medium",
             }}
           >
@@ -134,7 +133,7 @@ const Promotional = () => {
           <Image src={SpotifyIcon} alt="" height="16px" width="16px" />
           <Typography
             sx={{
-              fontSize: "14px",
+              fontSize: { xs: "10px", md: "14px" },
               fontWeight: "bold",
             }}
           >

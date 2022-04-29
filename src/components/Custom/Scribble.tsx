@@ -9,7 +9,7 @@ const Scribble = () => {
       sx={{
         position: "absolute",
         mt: "-78px",
-        left: "45%",
+        left: { xs: "35%", md: "45%" },
         right: 0,
       }}
     >

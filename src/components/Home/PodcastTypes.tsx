@@ -69,18 +69,8 @@ const PodcastTypes: NextPage = () => {
     speed: 10000,
     autoplaySpeed: 0,
     cssEase: "linear",
+    arrows: false,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          speed: 300,
-          infinite: true,
-          dots: true,
-          swipeToSlide: true,
-        },
-      },
       {
         breakpoint: 600,
         settings: {
@@ -97,8 +87,9 @@ const PodcastTypes: NextPage = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          speed: 300,
-          autoplay: false,
+          autoplay: true,
+          speed: 5000,
+          autoplaySpeed: 1000,
           dots: true,
           swipeToSlide: true,
         },
@@ -114,19 +105,19 @@ const PodcastTypes: NextPage = () => {
         py: "80px",
       }}
     >
-      <Box sx={{ mx: 5 }}>
+      <Box sx={{ mx: { xs: 1, md: 5 } }}>
         <Slider {...settings}>
           {categoryData?.map((podcast: any, index: number) => {
             return (
-              <Box key={index}>
+              <Box key={index} sx={{ mx: "4vw" }}>
                 <Paper
                   sx={{
-                    height: "350px",
-                    width: "350px",
+                    height: { xs: "380px", md: "350px" },
+                    width: { xs: "90vw", md: "350px" },
                     backgroundImage: `url(${podcast.cover})`,
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
-                    borderRadius: "10px",
+                    borderRadius: "20px",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
@@ -140,7 +131,7 @@ const PodcastTypes: NextPage = () => {
                       padding: "20px",
                     }}
                   >
-                    {podcast?.googlePodcast && (
+                    {podcast?.googlePodcastUrl && (
                       <ComposedLink to={podcast.googlePodcastUrl}>
                         <SiGooglepodcasts
                           style={{ fontSize: "24px", color: "#fff" }}
@@ -164,7 +155,7 @@ const PodcastTypes: NextPage = () => {
                   </Box>
                   <Typography
                     sx={{
-                      fontSize: "36px",
+                      fontSize: { xs: "25px", md: "36px" },
                       fontWeight: "bold",
                       color: "primary.main",
                       padding: "20px",
@@ -188,7 +179,7 @@ const PodcastTypes: NextPage = () => {
           py: { xs: "30px", md: 0 },
         }}
       >
-        <Grid container rowGap={2} sx={{ height: 1 }}>
+        <Grid container rowGap={5} sx={{ height: 1 }}>
           <Grid
             item
             xs={12}
@@ -201,7 +192,7 @@ const PodcastTypes: NextPage = () => {
           >
             <Typography
               sx={{
-                fontSize: "22.6px",
+                fontSize: { xs: "18px", md: "22.6px" },
                 fontWeight: "bold",
                 textAlign: "center",
               }}
@@ -221,8 +212,8 @@ const PodcastTypes: NextPage = () => {
           >
             <Image
               height="35px"
-              width="130px"
-              src={Spotify}
+              width="200px"
+              src={GooglePodcast}
               alt="podcastLogo"
             />
           </Grid>
@@ -238,8 +229,8 @@ const PodcastTypes: NextPage = () => {
           >
             <Image
               height="35px"
-              width="200px"
-              src={GooglePodcast}
+              width="130px"
+              src={Spotify}
               alt="podcastLogo"
             />
           </Grid>

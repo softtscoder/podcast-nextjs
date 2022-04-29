@@ -38,14 +38,14 @@ const Navbar = () => {
         background: "#F7EDE8E8",
         backdropFilter: "blur(10px)",
         boxShadow: "none",
-        height: "6rem",
+        height: { sm: "3rem", md: "6rem" },
       }}
     >
       <Toolbar
         variant="dense"
         component="nav"
         sx={{
-          my: "1.6rem",
+          my: { md: "1.6rem" },
           mx: { xs: "1rem", md: "8rem" },
         }}
       >
